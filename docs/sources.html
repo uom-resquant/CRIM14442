@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Sources | Making Sense of Crime Data</title>
+  <meta name="description" content="This is a companion workbook for the 2nd year undergraduate module CRIM20441 Making Sense of Criminological Data at the University of Manchester." />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Sources | Making Sense of Crime Data" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a companion workbook for the 2nd year undergraduate module CRIM20441 Making Sense of Criminological Data at the University of Manchester." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Sources | Making Sense of Crime Data" />
+  
+  <meta name="twitter:description" content="This is a companion workbook for the 2nd year undergraduate module CRIM20441 Making Sense of Criminological Data at the University of Manchester." />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2025-10-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week4.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const links = document.querySelectorAll('a[href]');
+
+  links.forEach(link => {
+
+      link.setAttribute('target', '_blank');  // Open non-search links in a new tab
+      link.setAttribute('rel', 'noopener noreferrer');  // Security attributes
+  });
+})
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Find the search button
+    const searchButton = document.querySelector('a[href][target="_blank"] .fa-search').parentElement;
+
+    // Remove the 'target="_blank"' attribute to stop it from opening in a new tab
+    if (searchButton) {
+        searchButton.removeAttribute('target');
+    }
+});
+</script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li>Making Sense of Criminological Data</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i>Disclaimer</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#overview-of-course"><i class="fa fa-check"></i>Overview of course</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-structure"><i class="fa fa-check"></i>Module structure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="week1.html"><a href="week1.html"><i class="fa fa-check"></i><b>1</b> Week 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="week1.html"><a href="week1.html#learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="1.2" data-path="week1.html"><a href="week1.html#familiarising-yourself-with-the-course"><i class="fa fa-check"></i><b>1.2</b> Familiarising yourself with the course</a></li>
+<li class="chapter" data-level="1.3" data-path="week1.html"><a href="week1.html#asking-a-question-on-the-canvas-discussion-board"><i class="fa fa-check"></i><b>1.3</b> Asking a question on the Canvas discussion board</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="week1.html"><a href="week1.html#activity-1-posting-on-canvas"><i class="fa fa-check"></i><b>1.3.1</b> Activity 1: Posting on Canvas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="week1.html"><a href="week1.html#setting-up-your-working-environment"><i class="fa fa-check"></i><b>1.4</b> Setting up your working environment</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="week1.html"><a href="week1.html#activity-2-create-a-folder-for-this-module"><i class="fa fa-check"></i><b>1.4.1</b> Activity 2: Create a folder for this module</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="week1.html"><a href="week1.html#working-directory"><i class="fa fa-check"></i><b>1.5</b> Working directory</a></li>
+<li class="chapter" data-level="1.6" data-path="week1.html"><a href="week1.html#getting-to-know-excel"><i class="fa fa-check"></i><b>1.6</b> Getting to know Excel</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="week1.html"><a href="week1.html#install-excel"><i class="fa fa-check"></i><b>1.6.1</b> Install Excel</a></li>
+<li class="chapter" data-level="1.6.2" data-path="week1.html"><a href="week1.html#install-data-analysis-toolpak"><i class="fa fa-check"></i><b>1.6.2</b> Install data analysis toolpak</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="week1.html"><a href="week1.html#data-variables-and-observations"><i class="fa fa-check"></i><b>1.7</b> Data: Variables and observations</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="week1.html"><a href="week1.html#activity-3-building-your-own-data"><i class="fa fa-check"></i><b>1.7.1</b> Activity 3: Building your own data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="week1.html"><a href="week1.html#questions-about-your-data"><i class="fa fa-check"></i><b>1.8</b> Questions about your data</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="week1.html"><a href="week1.html#activity-4-thinking-about-what-our-data-tells-us"><i class="fa fa-check"></i><b>1.8.1</b> Activity 4: Thinking about what our data tells us</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="week1.html"><a href="week1.html#looking-at-real-data"><i class="fa fa-check"></i><b>1.9</b> Looking at real data</a></li>
+<li class="chapter" data-level="1.10" data-path="week1.html"><a href="week1.html#codebooks"><i class="fa fa-check"></i><b>1.10</b> Codebooks</a></li>
+<li class="chapter" data-level="1.11" data-path="week1.html"><a href="week1.html#levels-of-measurement"><i class="fa fa-check"></i><b>1.11</b> Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="week1.html"><a href="week1.html#activity-5-levels-of-measurement-pt.-1"><i class="fa fa-check"></i><b>1.11.1</b> Activity 5: Levels of measurement pt. 1</a></li>
+<li class="chapter" data-level="1.11.2" data-path="week1.html"><a href="week1.html#activity-6-levels-of-measurement-pt.-2"><i class="fa fa-check"></i><b>1.11.2</b> Activity 6: Levels of measurement pt. 2</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="week1.html"><a href="week1.html#unit-of-analysis"><i class="fa fa-check"></i><b>1.12</b> Unit of analysis</a>
+<ul>
+<li class="chapter" data-level="1.12.1" data-path="week1.html"><a href="week1.html#activity-7-abstract-ing-the-unit-of-analysis"><i class="fa fa-check"></i><b>1.12.1</b> Activity 7: <em>Abstract</em>-ing the unit of analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="week1.html"><a href="week1.html#summary"><i class="fa fa-check"></i><b>1.13</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="week2.html"><a href="week2.html"><i class="fa fa-check"></i><b>2</b> Week 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week2.html"><a href="week2.html#learning-outcomes-1"><i class="fa fa-check"></i><b>2.1</b> Learning outcomes</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="week2.html"><a href="week2.html#activity"><i class="fa fa-check"></i><b>2.1.1</b> Activity</a></li>
+<li class="chapter" data-level="2.1.2" data-path="week2.html"><a href="week2.html#terms-for-today"><i class="fa fa-check"></i><b>2.1.2</b> Terms for today:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="week2.html"><a href="week2.html#univariate-analysis"><i class="fa fa-check"></i><b>2.2</b> Univariate analysis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="week2.html"><a href="week2.html#the-importance-of-the-level-of-measurement"><i class="fa fa-check"></i><b>2.2.1</b> The importance of the level of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="week2.html"><a href="week2.html#summarising-categorical-data"><i class="fa fa-check"></i><b>2.3</b> Summarising categorical data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="week2.html"><a href="week2.html#activity-crime-types"><i class="fa fa-check"></i><b>2.3.1</b> Activity: Crime types</a></li>
+<li class="chapter" data-level="2.3.2" data-path="week2.html"><a href="week2.html#frequency-tables"><i class="fa fa-check"></i><b>2.3.2</b> Frequency tables</a></li>
+<li class="chapter" data-level="2.3.3" data-path="week2.html"><a href="week2.html#creating-a-frequency-table-in-excel"><i class="fa fa-check"></i><b>2.3.3</b> Creating a frequency table in Excel</a></li>
+<li class="chapter" data-level="2.3.4" data-path="week2.html"><a href="week2.html#activity-looking-at-frequency"><i class="fa fa-check"></i><b>2.3.4</b> Activity: Looking at frequency</a></li>
+<li class="chapter" data-level="2.3.5" data-path="week2.html"><a href="week2.html#visualising-a-frequency-table-with-bar-charts"><i class="fa fa-check"></i><b>2.3.5</b> Visualising a frequency table with bar charts</a></li>
+<li class="chapter" data-level="2.3.6" data-path="week2.html"><a href="week2.html#activity-bar-charts-in-excel"><i class="fa fa-check"></i><b>2.3.6</b> Activity: Bar charts in Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="week2.html"><a href="week2.html#summarising-numeric-data"><i class="fa fa-check"></i><b>2.4</b> Summarising numeric data</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="week2.html"><a href="week2.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>2.4.1</b> Measures of central tendency</a></li>
+<li class="chapter" data-level="2.4.2" data-path="week2.html"><a href="week2.html#activity-mean-and-median-in-excel"><i class="fa fa-check"></i><b>2.4.2</b> Activity: Mean and median in Excel</a></li>
+<li class="chapter" data-level="2.4.3" data-path="week2.html"><a href="week2.html#distributions"><i class="fa fa-check"></i><b>2.4.3</b> Distributions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="week2.html"><a href="week2.html#histograms"><i class="fa fa-check"></i><b>2.4.4</b> Histograms</a></li>
+<li class="chapter" data-level="2.4.5" data-path="week2.html"><a href="week2.html#activity-histograms-in-excel"><i class="fa fa-check"></i><b>2.4.5</b> Activity: Histograms in Excel</a></li>
+<li class="chapter" data-level="2.4.6" data-path="week2.html"><a href="week2.html#five-number-summary"><i class="fa fa-check"></i><b>2.4.6</b> Five-number summary</a></li>
+<li class="chapter" data-level="2.4.7" data-path="week2.html"><a href="week2.html#activity-calculate-quartiles"><i class="fa fa-check"></i><b>2.4.7</b> Activity: Calculate quartiles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="week2.html"><a href="week2.html#standard-deviation"><i class="fa fa-check"></i><b>2.5</b> Standard deviation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="week2.html"><a href="week2.html#activity-standard-deviation-in-excel"><i class="fa fa-check"></i><b>2.5.1</b> Activity: Standard Deviation in Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="week2.html"><a href="week2.html#writing-it-all-up"><i class="fa fa-check"></i><b>2.6</b> Writing it all up</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="week2.html"><a href="week2.html#build-a-structure"><i class="fa fa-check"></i><b>2.6.1</b> Build a structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="week2.html"><a href="week2.html#summary-1"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week3.html"><a href="week3.html"><i class="fa fa-check"></i><b>3</b> Week 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week3.html"><a href="week3.html#learning-outcomes-2"><i class="fa fa-check"></i><b>3.1</b> Learning outcomes</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="week3.html"><a href="week3.html#terms-for-today-1"><i class="fa fa-check"></i><b>3.1.1</b> Terms for today</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="week3.html"><a href="week3.html#categorical-vs.-categorical"><i class="fa fa-check"></i><b>3.2</b> Categorical vs. categorical</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="week3.html"><a href="week3.html#surviving-the-titanic"><i class="fa fa-check"></i><b>3.2.1</b> Surviving the Titanic</a></li>
+<li class="chapter" data-level="3.2.2" data-path="week3.html"><a href="week3.html#row-percentage-column-percentage-or-total-percentage"><i class="fa fa-check"></i><b>3.2.2</b> Row percentage, column percentage, or total percentage</a></li>
+<li class="chapter" data-level="3.2.3" data-path="week3.html"><a href="week3.html#activity-calculating-row-vs-column-percentages"><i class="fa fa-check"></i><b>3.2.3</b> Activity: Calculating row vs column percentages</a></li>
+<li class="chapter" data-level="3.2.4" data-path="week3.html"><a href="week3.html#decimal-places-a-note-on-formatting-cells"><i class="fa fa-check"></i><b>3.2.4</b> Decimal places: A note on formatting cells</a></li>
+<li class="chapter" data-level="3.2.5" data-path="week3.html"><a href="week3.html#activity-visualising-the-relationship---stacked-bar-charts-and-conditional-formatting"><i class="fa fa-check"></i><b>3.2.5</b> Activity: Visualising the relationship - Stacked bar charts and conditional formatting</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="week3.html"><a href="week3.html#categorical-vs-numeric"><i class="fa fa-check"></i><b>3.3</b> Categorical vs numeric</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="week3.html"><a href="week3.html#activity-age-of-offenders"><i class="fa fa-check"></i><b>3.3.1</b> Activity: Age of offenders</a></li>
+<li class="chapter" data-level="3.3.2" data-path="week3.html"><a href="week3.html#activity-adding-a-column-for-median"><i class="fa fa-check"></i><b>3.3.2</b> Activity: Adding a column for median</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="week3.html"><a href="week3.html#numeric-vs.-numeric"><i class="fa fa-check"></i><b>3.4</b> Numeric vs. numeric</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="week3.html"><a href="week3.html#activity-does-age-at-first-arrest-correlate-with-the-total-number-of-arrests"><i class="fa fa-check"></i><b>3.4.1</b> Activity: Does age at first arrest correlate with the total number of arrests?</a></li>
+<li class="chapter" data-level="3.4.2" data-path="week3.html"><a href="week3.html#correlation-does-not-mean-causation"><i class="fa fa-check"></i><b>3.4.2</b> Correlation does not mean causation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="week3.html"><a href="week3.html#summary-2"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week4.html"><a href="week4.html"><i class="fa fa-check"></i><b>4</b> Week 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="week4.html"><a href="week4.html#learning-outcomes-3"><i class="fa fa-check"></i><b>4.1</b> Learning outcomes</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="week4.html"><a href="week4.html#terms-for-today-2"><i class="fa fa-check"></i><b>4.1.1</b> Terms for today:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="week4.html"><a href="week4.html#population-parameters-versus-sample-statistics"><i class="fa fa-check"></i><b>4.2</b> Population parameters versus sample statistics</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="week4.html"><a href="week4.html#activity-sample-statistics-vs-population-parameters"><i class="fa fa-check"></i><b>4.2.1</b> Activity: Sample statistics vs population parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="week4.html"><a href="week4.html#central-limit-theorem"><i class="fa fa-check"></i><b>4.3</b> Central Limit Theorem</a></li>
+<li class="chapter" data-level="4.4" data-path="week4.html"><a href="week4.html#conceptualisation"><i class="fa fa-check"></i><b>4.4</b> Conceptualisation</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="week4.html"><a href="week4.html#activity-conceptualise-hate-speech"><i class="fa fa-check"></i><b>4.4.1</b> Activity: Conceptualise ‘hate speech’</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="week4.html"><a href="week4.html#the-importance-of-conceptualisation"><i class="fa fa-check"></i><b>4.5</b> The importance of conceptualisation</a></li>
+<li class="chapter" data-level="4.6" data-path="week4.html"><a href="week4.html#measurement"><i class="fa fa-check"></i><b>4.6</b> Measurement</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="week4.html"><a href="week4.html#measuring-constructs-with-composite-variables"><i class="fa fa-check"></i><b>4.6.1</b> Measuring constructs with composite variables</a></li>
+<li class="chapter" data-level="4.6.2" data-path="week4.html"><a href="week4.html#activity-computing-a-z-score-in-excel"><i class="fa fa-check"></i><b>4.6.2</b> Activity: Computing a z-score in Excel</a></li>
+<li class="chapter" data-level="4.6.3" data-path="week4.html"><a href="week4.html#activity-twitter-data-revisited"><i class="fa fa-check"></i><b>4.6.3</b> Activity: Twitter data revisited</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="week4.html"><a href="week4.html#composite-variables-created-from-categorical-variables"><i class="fa fa-check"></i><b>4.7</b> Composite variables created from categorical variables</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="week4.html"><a href="week4.html#multi-item-scales-for-categorical-constructs"><i class="fa fa-check"></i><b>4.7.1</b> Multi-item scales for categorical constructs</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="week4.html"><a href="week4.html#a-note-on-validity-and-reliability"><i class="fa fa-check"></i><b>4.8</b> A note on Validity and Reliability</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="week4.html"><a href="week4.html#activity-calculating-a-summative-score"><i class="fa fa-check"></i><b>4.8.1</b> Activity: Calculating a summative score</a></li>
+<li class="chapter" data-level="4.8.2" data-path="week4.html"><a href="week4.html#activity-testing-your-questions-cronbachs-alpha"><i class="fa fa-check"></i><b>4.8.2</b> Activity: Testing your questions: Cronbach’s alpha</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="week4.html"><a href="week4.html#recoding-some-more-transforming-your-variables-to-fit-with-your-concepts"><i class="fa fa-check"></i><b>4.9</b> Recoding some more: Transforming your variables to fit with your concepts</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="week4.html"><a href="week4.html#activity-recoding-variables"><i class="fa fa-check"></i><b>4.9.1</b> Activity: Recoding Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="week4.html"><a href="week4.html#summary-3"><i class="fa fa-check"></i><b>4.10</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sources.html"><a href="sources.html"><i class="fa fa-check"></i><b>5</b> Sources</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Making Sense of Crime Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sources" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Sources<a href="sources.html#sources" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<ul>
+<li><a href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0080-62342014000100146">Analysis of variables that are not directly observable: influence on decision-making during the research process</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5459482/">Composite Variables: When and How</a></li>
+<li><a href="http://onlinelibrary.wiley.com.manchester.idm.oclc.org/doi/10.1002/9780470024522.ch4/pdf">Scores and measurements: validity, reliability, sensitivity</a></li>
+</ul>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": {},
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

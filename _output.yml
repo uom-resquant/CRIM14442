@@ -1,0 +1,21 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+       <div class="logo">
+          <img src="imgs/logo.png" style="height:80px; margin-bottom:10px;">
+        </div>
+
+        <li>Making Sense of Criminological Data</li>
+      after: |
+       <li><a href="https://github.com/rstudio/bookdown">Published with bookdown</a></li>
+    download: []
+
+# bookdown::pdf_book:
+#   includes:
+#     in_header: preamble.tex
+#   latex_engine: xelatex
+#   citation_package: natbib
+#   keep_tex: yes
+# bookdown::epub_book: default

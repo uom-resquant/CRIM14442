@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Week 7 | Making Sense of Crime Data</title>
+  <meta name="description" content="This is a companion workbook for the 2nd year undergraduate module CRIM20441 Making Sense of Criminological Data at the University of Manchester." />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Week 7 | Making Sense of Crime Data" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a companion workbook for the 2nd year undergraduate module CRIM20441 Making Sense of Criminological Data at the University of Manchester." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Week 7 | Making Sense of Crime Data" />
+  
+  <meta name="twitter:description" content="This is a companion workbook for the 2nd year undergraduate module CRIM20441 Making Sense of Criminological Data at the University of Manchester." />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2025-11-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week6.html"/>
+<link rel="next" href="week8.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const links = document.querySelectorAll('a[href]');
+
+  links.forEach(link => {
+
+      link.setAttribute('target', '_blank');  // Open non-search links in a new tab
+      link.setAttribute('rel', 'noopener noreferrer');  // Security attributes
+  });
+})
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Find the search button
+    const searchButton = document.querySelector('a[href][target="_blank"] .fa-search').parentElement;
+
+    // Remove the 'target="_blank"' attribute to stop it from opening in a new tab
+    if (searchButton) {
+        searchButton.removeAttribute('target');
+    }
+});
+</script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<div class="logo">
+   <img src="imgs/logo.png" style="height:80px; margin-bottom:10px;">
+ </div>
+
+ <li>Making Sense of Criminological Data</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i>Disclaimer</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#overview-of-course"><i class="fa fa-check"></i>Overview of course</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#module-structure"><i class="fa fa-check"></i>Module structure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="week1.html"><a href="week1.html"><i class="fa fa-check"></i><b>1</b> Week 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="week1.html"><a href="week1.html#learning-outcomes"><i class="fa fa-check"></i><b>1.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="1.2" data-path="week1.html"><a href="week1.html#familiarising-yourself-with-the-course"><i class="fa fa-check"></i><b>1.2</b> Familiarising yourself with the course</a></li>
+<li class="chapter" data-level="1.3" data-path="week1.html"><a href="week1.html#asking-a-question-on-the-canvas-discussion-board"><i class="fa fa-check"></i><b>1.3</b> Asking a question on the Canvas discussion board</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="week1.html"><a href="week1.html#activity-1-posting-on-canvas"><i class="fa fa-check"></i><b>1.3.1</b> Activity 1: Posting on Canvas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="week1.html"><a href="week1.html#setting-up-your-working-environment"><i class="fa fa-check"></i><b>1.4</b> Setting up your working environment</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="week1.html"><a href="week1.html#activity-2-create-a-folder-for-this-module"><i class="fa fa-check"></i><b>1.4.1</b> Activity 2: Create a folder for this module</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="week1.html"><a href="week1.html#working-directory"><i class="fa fa-check"></i><b>1.5</b> Working directory</a></li>
+<li class="chapter" data-level="1.6" data-path="week1.html"><a href="week1.html#getting-to-know-excel"><i class="fa fa-check"></i><b>1.6</b> Getting to know Excel</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="week1.html"><a href="week1.html#install-excel"><i class="fa fa-check"></i><b>1.6.1</b> Install Excel</a></li>
+<li class="chapter" data-level="1.6.2" data-path="week1.html"><a href="week1.html#install-data-analysis-toolpak"><i class="fa fa-check"></i><b>1.6.2</b> Install data analysis toolpak</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="week1.html"><a href="week1.html#data-variables-and-observations"><i class="fa fa-check"></i><b>1.7</b> Data: Variables and observations</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="week1.html"><a href="week1.html#activity-3-building-your-own-data"><i class="fa fa-check"></i><b>1.7.1</b> Activity 3: Building your own data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="week1.html"><a href="week1.html#questions-about-your-data"><i class="fa fa-check"></i><b>1.8</b> Questions about your data</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="week1.html"><a href="week1.html#activity-4-thinking-about-what-our-data-tells-us"><i class="fa fa-check"></i><b>1.8.1</b> Activity 4: Thinking about what our data tells us</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="week1.html"><a href="week1.html#looking-at-real-data"><i class="fa fa-check"></i><b>1.9</b> Looking at real data</a></li>
+<li class="chapter" data-level="1.10" data-path="week1.html"><a href="week1.html#codebooks"><i class="fa fa-check"></i><b>1.10</b> Codebooks</a></li>
+<li class="chapter" data-level="1.11" data-path="week1.html"><a href="week1.html#levels-of-measurement"><i class="fa fa-check"></i><b>1.11</b> Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="week1.html"><a href="week1.html#activity-5-levels-of-measurement-pt.-1"><i class="fa fa-check"></i><b>1.11.1</b> Activity 5: Levels of measurement pt. 1</a></li>
+<li class="chapter" data-level="1.11.2" data-path="week1.html"><a href="week1.html#activity-6-levels-of-measurement-pt.-2"><i class="fa fa-check"></i><b>1.11.2</b> Activity 6: Levels of measurement pt. 2</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="week1.html"><a href="week1.html#unit-of-analysis"><i class="fa fa-check"></i><b>1.12</b> Unit of analysis</a>
+<ul>
+<li class="chapter" data-level="1.12.1" data-path="week1.html"><a href="week1.html#activity-7-abstract-ing-the-unit-of-analysis"><i class="fa fa-check"></i><b>1.12.1</b> Activity 7: <em>Abstract</em>-ing the unit of analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="week1.html"><a href="week1.html#summary"><i class="fa fa-check"></i><b>1.13</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="week2.html"><a href="week2.html"><i class="fa fa-check"></i><b>2</b> Week 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week2.html"><a href="week2.html#learning-outcomes-1"><i class="fa fa-check"></i><b>2.1</b> Learning outcomes</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="week2.html"><a href="week2.html#activity"><i class="fa fa-check"></i><b>2.1.1</b> Activity</a></li>
+<li class="chapter" data-level="2.1.2" data-path="week2.html"><a href="week2.html#terms-for-today"><i class="fa fa-check"></i><b>2.1.2</b> Terms for today:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="week2.html"><a href="week2.html#univariate-analysis"><i class="fa fa-check"></i><b>2.2</b> Univariate analysis</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="week2.html"><a href="week2.html#the-importance-of-the-level-of-measurement"><i class="fa fa-check"></i><b>2.2.1</b> The importance of the level of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="week2.html"><a href="week2.html#summarising-categorical-data"><i class="fa fa-check"></i><b>2.3</b> Summarising categorical data</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="week2.html"><a href="week2.html#activity-crime-types"><i class="fa fa-check"></i><b>2.3.1</b> Activity: Crime types</a></li>
+<li class="chapter" data-level="2.3.2" data-path="week2.html"><a href="week2.html#frequency-tables"><i class="fa fa-check"></i><b>2.3.2</b> Frequency tables</a></li>
+<li class="chapter" data-level="2.3.3" data-path="week2.html"><a href="week2.html#creating-a-frequency-table-in-excel"><i class="fa fa-check"></i><b>2.3.3</b> Creating a frequency table in Excel</a></li>
+<li class="chapter" data-level="2.3.4" data-path="week2.html"><a href="week2.html#activity-looking-at-frequency"><i class="fa fa-check"></i><b>2.3.4</b> Activity: Looking at frequency</a></li>
+<li class="chapter" data-level="2.3.5" data-path="week2.html"><a href="week2.html#visualising-a-frequency-table-with-bar-charts"><i class="fa fa-check"></i><b>2.3.5</b> Visualising a frequency table with bar charts</a></li>
+<li class="chapter" data-level="2.3.6" data-path="week2.html"><a href="week2.html#activity-bar-charts-in-excel"><i class="fa fa-check"></i><b>2.3.6</b> Activity: Bar charts in Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="week2.html"><a href="week2.html#summarising-numeric-data"><i class="fa fa-check"></i><b>2.4</b> Summarising numeric data</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="week2.html"><a href="week2.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>2.4.1</b> Measures of central tendency</a></li>
+<li class="chapter" data-level="2.4.2" data-path="week2.html"><a href="week2.html#activity-mean-and-median-in-excel"><i class="fa fa-check"></i><b>2.4.2</b> Activity: Mean and median in Excel</a></li>
+<li class="chapter" data-level="2.4.3" data-path="week2.html"><a href="week2.html#distributions"><i class="fa fa-check"></i><b>2.4.3</b> Distributions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="week2.html"><a href="week2.html#histograms"><i class="fa fa-check"></i><b>2.4.4</b> Histograms</a></li>
+<li class="chapter" data-level="2.4.5" data-path="week2.html"><a href="week2.html#activity-histograms-in-excel"><i class="fa fa-check"></i><b>2.4.5</b> Activity: Histograms in Excel</a></li>
+<li class="chapter" data-level="2.4.6" data-path="week2.html"><a href="week2.html#five-number-summary"><i class="fa fa-check"></i><b>2.4.6</b> Five-number summary</a></li>
+<li class="chapter" data-level="2.4.7" data-path="week2.html"><a href="week2.html#activity-calculate-quartiles"><i class="fa fa-check"></i><b>2.4.7</b> Activity: Calculate quartiles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="week2.html"><a href="week2.html#standard-deviation"><i class="fa fa-check"></i><b>2.5</b> Standard deviation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="week2.html"><a href="week2.html#activity-standard-deviation-in-excel"><i class="fa fa-check"></i><b>2.5.1</b> Activity: Standard Deviation in Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="week2.html"><a href="week2.html#writing-it-all-up"><i class="fa fa-check"></i><b>2.6</b> Writing it all up</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="week2.html"><a href="week2.html#build-a-structure"><i class="fa fa-check"></i><b>2.6.1</b> Build a structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="week2.html"><a href="week2.html#summary-1"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week3.html"><a href="week3.html"><i class="fa fa-check"></i><b>3</b> Week 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week3.html"><a href="week3.html#learning-outcomes-2"><i class="fa fa-check"></i><b>3.1</b> Learning outcomes</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="week3.html"><a href="week3.html#terms-for-today-1"><i class="fa fa-check"></i><b>3.1.1</b> Terms for today</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="week3.html"><a href="week3.html#categorical-vs.-categorical"><i class="fa fa-check"></i><b>3.2</b> Categorical vs. categorical</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="week3.html"><a href="week3.html#surviving-the-titanic"><i class="fa fa-check"></i><b>3.2.1</b> Surviving the Titanic</a></li>
+<li class="chapter" data-level="3.2.2" data-path="week3.html"><a href="week3.html#row-percentage-column-percentage-or-total-percentage"><i class="fa fa-check"></i><b>3.2.2</b> Row percentage, column percentage, or total percentage</a></li>
+<li class="chapter" data-level="3.2.3" data-path="week3.html"><a href="week3.html#activity-calculating-row-vs-column-percentages"><i class="fa fa-check"></i><b>3.2.3</b> Activity: Calculating row vs column percentages</a></li>
+<li class="chapter" data-level="3.2.4" data-path="week3.html"><a href="week3.html#decimal-places-a-note-on-formatting-cells"><i class="fa fa-check"></i><b>3.2.4</b> Decimal places: A note on formatting cells</a></li>
+<li class="chapter" data-level="3.2.5" data-path="week3.html"><a href="week3.html#activity-visualising-the-relationship---stacked-bar-charts-and-conditional-formatting"><i class="fa fa-check"></i><b>3.2.5</b> Activity: Visualising the relationship - Stacked bar charts and conditional formatting</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="week3.html"><a href="week3.html#categorical-vs-numeric"><i class="fa fa-check"></i><b>3.3</b> Categorical vs numeric</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="week3.html"><a href="week3.html#activity-age-of-offenders"><i class="fa fa-check"></i><b>3.3.1</b> Activity: Age of offenders</a></li>
+<li class="chapter" data-level="3.3.2" data-path="week3.html"><a href="week3.html#activity-adding-a-column-for-median"><i class="fa fa-check"></i><b>3.3.2</b> Activity: Adding a column for median</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="week3.html"><a href="week3.html#numeric-vs.-numeric"><i class="fa fa-check"></i><b>3.4</b> Numeric vs. numeric</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="week3.html"><a href="week3.html#activity-does-age-at-first-arrest-correlate-with-the-total-number-of-arrests"><i class="fa fa-check"></i><b>3.4.1</b> Activity: Does age at first arrest correlate with the total number of arrests?</a></li>
+<li class="chapter" data-level="3.4.2" data-path="week3.html"><a href="week3.html#correlation-does-not-mean-causation"><i class="fa fa-check"></i><b>3.4.2</b> Correlation does not mean causation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="week3.html"><a href="week3.html#summary-2"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week4.html"><a href="week4.html"><i class="fa fa-check"></i><b>4</b> Week 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="week4.html"><a href="week4.html#learning-outcomes-3"><i class="fa fa-check"></i><b>4.1</b> Learning outcomes</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="week4.html"><a href="week4.html#terms-for-today-2"><i class="fa fa-check"></i><b>4.1.1</b> Terms for today:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="week4.html"><a href="week4.html#population-parameters-versus-sample-statistics"><i class="fa fa-check"></i><b>4.2</b> Population parameters versus sample statistics</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="week4.html"><a href="week4.html#activity-sample-statistics-vs-population-parameters"><i class="fa fa-check"></i><b>4.2.1</b> Activity: Sample statistics vs population parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="week4.html"><a href="week4.html#central-limit-theorem"><i class="fa fa-check"></i><b>4.3</b> Central Limit Theorem</a></li>
+<li class="chapter" data-level="4.4" data-path="week4.html"><a href="week4.html#conceptualisation"><i class="fa fa-check"></i><b>4.4</b> Conceptualisation</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="week4.html"><a href="week4.html#activity-conceptualise-hate-speech"><i class="fa fa-check"></i><b>4.4.1</b> Activity: Conceptualise ‘hate speech’</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="week4.html"><a href="week4.html#the-importance-of-conceptualisation"><i class="fa fa-check"></i><b>4.5</b> The importance of conceptualisation</a></li>
+<li class="chapter" data-level="4.6" data-path="week4.html"><a href="week4.html#measurement"><i class="fa fa-check"></i><b>4.6</b> Measurement</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="week4.html"><a href="week4.html#measuring-constructs-with-composite-variables"><i class="fa fa-check"></i><b>4.6.1</b> Measuring constructs with composite variables</a></li>
+<li class="chapter" data-level="4.6.2" data-path="week4.html"><a href="week4.html#activity-computing-a-z-score-in-excel"><i class="fa fa-check"></i><b>4.6.2</b> Activity: Computing a z-score in Excel</a></li>
+<li class="chapter" data-level="4.6.3" data-path="week4.html"><a href="week4.html#activity-twitter-data-revisited"><i class="fa fa-check"></i><b>4.6.3</b> Activity: Twitter data revisited</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="week4.html"><a href="week4.html#composite-variables-created-from-categorical-variables"><i class="fa fa-check"></i><b>4.7</b> Composite variables created from categorical variables</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="week4.html"><a href="week4.html#multi-item-scales-for-categorical-constructs"><i class="fa fa-check"></i><b>4.7.1</b> Multi-item scales for categorical constructs</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="week4.html"><a href="week4.html#a-note-on-validity-and-reliability"><i class="fa fa-check"></i><b>4.8</b> A note on Validity and Reliability</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="week4.html"><a href="week4.html#activity-calculating-a-summative-score"><i class="fa fa-check"></i><b>4.8.1</b> Activity: Calculating a summative score</a></li>
+<li class="chapter" data-level="4.8.2" data-path="week4.html"><a href="week4.html#activity-testing-your-questions-cronbachs-alpha"><i class="fa fa-check"></i><b>4.8.2</b> Activity: Testing your questions: Cronbach’s alpha</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="week4.html"><a href="week4.html#recoding-some-more-transforming-your-variables-to-fit-with-your-concepts"><i class="fa fa-check"></i><b>4.9</b> Recoding some more: Transforming your variables to fit with your concepts</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="week4.html"><a href="week4.html#activity-recoding-variables"><i class="fa fa-check"></i><b>4.9.1</b> Activity: Recoding Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="week4.html"><a href="week4.html#summary-3"><i class="fa fa-check"></i><b>4.10</b> Summary</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="week4.html"><a href="week4.html#sources"><i class="fa fa-check"></i><b>4.10.1</b> Sources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week5.html"><a href="week5.html"><i class="fa fa-check"></i><b>5</b> Week 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="week5.html"><a href="week5.html#learning-outcomes-4"><i class="fa fa-check"></i><b>5.1</b> Learning outcomes</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="week5.html"><a href="week5.html#terms-for-today-3"><i class="fa fa-check"></i><b>5.1.1</b> Terms for today</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="week5.html"><a href="week5.html#research-design"><i class="fa fa-check"></i><b>5.2</b> Research Design</a></li>
+<li class="chapter" data-level="5.3" data-path="week5.html"><a href="week5.html#experiments-and-evaluation"><i class="fa fa-check"></i><b>5.3</b> Experiments and evaluation</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="week5.html"><a href="week5.html#activity-examples-of-experiments-in-criminology"><i class="fa fa-check"></i><b>5.3.1</b> Activity: Examples of Experiments in Criminology</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week5.html"><a href="week5.html#what-influences-what-dependent-vs-independent-variables"><i class="fa fa-check"></i><b>5.3.2</b> What influences what? Dependent vs independent variables</a></li>
+<li class="chapter" data-level="5.3.3" data-path="week5.html"><a href="week5.html#activity-dependent-and-independent-variables"><i class="fa fa-check"></i><b>5.3.3</b> Activity: Dependent and independent variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="week5.html"><a href="week5.html#importance-of-randomisation"><i class="fa fa-check"></i><b>5.4</b> Importance of randomisation</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="week5.html"><a href="week5.html#activity-random-assignment"><i class="fa fa-check"></i><b>5.4.1</b> Activity: Random assignment</a></li>
+<li class="chapter" data-level="5.4.2" data-path="week5.html"><a href="week5.html#note-freeze"><i class="fa fa-check"></i><b>5.4.2</b> Note: Freeze!</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="week5.html"><a href="week5.html#designing-your-study"><i class="fa fa-check"></i><b>5.5</b> Designing your study</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="week5.html"><a href="week5.html#pre-registration-committing-to-your-research-plan"><i class="fa fa-check"></i><b>5.5.1</b> Pre-registration: committing to your research plan</a></li>
+<li class="chapter" data-level="5.5.2" data-path="week5.html"><a href="week5.html#activity-research-planning-with-gantt-charts-design-an-rct-example"><i class="fa fa-check"></i><b>5.5.2</b> Activity: Research Planning with Gantt Charts: Design an RCT example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="week5.html"><a href="week5.html#longitudinal-data"><i class="fa fa-check"></i><b>5.6</b> Longitudinal data</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="week5.html"><a href="week5.html#what-does-longitudinal-data-look-like"><i class="fa fa-check"></i><b>5.6.1</b> What does longitudinal data look like?</a></li>
+<li class="chapter" data-level="5.6.2" data-path="week5.html"><a href="week5.html#activity-linking-data"><i class="fa fa-check"></i><b>5.6.2</b> Activity: Linking data</a></li>
+<li class="chapter" data-level="5.6.3" data-path="week5.html"><a href="week5.html#missing-data"><i class="fa fa-check"></i><b>5.6.3</b> Missing data</a></li>
+<li class="chapter" data-level="5.6.4" data-path="week5.html"><a href="week5.html#complete-cases-an-approach-to-missing-data"><i class="fa fa-check"></i><b>5.6.4</b> Complete cases (an approach to missing data)</a></li>
+<li class="chapter" data-level="5.6.5" data-path="week5.html"><a href="week5.html#activity-selecting-complete-cases"><i class="fa fa-check"></i><b>5.6.5</b> Activity: Selecting Complete Cases</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="week5.html"><a href="week5.html#ethics"><i class="fa fa-check"></i><b>5.7</b> Ethics</a></li>
+<li class="chapter" data-level="5.8" data-path="week5.html"><a href="week5.html#summary-4"><i class="fa fa-check"></i><b>5.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="week6.html"><a href="week6.html"><i class="fa fa-check"></i><b>6</b> Week 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="week6.html"><a href="week6.html#learning-outcomes-5"><i class="fa fa-check"></i><b>6.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="6.2" data-path="week6.html"><a href="week6.html#what-is-qualitative-data-analysis"><i class="fa fa-check"></i><b>6.2</b> What is qualitative data analysis?</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="week6.html"><a href="week6.html#how-is-qualitative-data-different-from-quantitative-data"><i class="fa fa-check"></i><b>6.2.1</b> How is qualitative data different from quantitative data?</a></li>
+<li class="chapter" data-level="6.2.2" data-path="week6.html"><a href="week6.html#activity-exploring-the-fincen-files"><i class="fa fa-check"></i><b>6.2.2</b> Activity: Exploring the FinCEN files</a></li>
+<li class="chapter" data-level="6.2.3" data-path="week6.html"><a href="week6.html#is-qualitative-data-analysis-easier"><i class="fa fa-check"></i><b>6.2.3</b> Is qualitative data analysis easier?</a></li>
+<li class="chapter" data-level="6.2.4" data-path="week6.html"><a href="week6.html#types-of-qualitative-data-analysis"><i class="fa fa-check"></i><b>6.2.4</b> Types of qualitative data analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="week6.html"><a href="week6.html#introducing-nvivo-a-software-for-qualitative-data-analysis"><i class="fa fa-check"></i><b>6.3</b> Introducing NVivo, a software for qualitative data analysis</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="week6.html"><a href="week6.html#nvivo-on-university-computers"><i class="fa fa-check"></i><b>6.3.1</b> NVivo on University computers</a></li>
+<li class="chapter" data-level="6.3.2" data-path="week6.html"><a href="week6.html#installing-nvivo-1415"><i class="fa fa-check"></i><b>6.3.2</b> Installing NVivo 14/15</a></li>
+<li class="chapter" data-level="6.3.3" data-path="week6.html"><a href="week6.html#activity-watch-nvivo-tutorials"><i class="fa fa-check"></i><b>6.3.3</b> Activity: Watch NVivo tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="week6.html"><a href="week6.html#what-kinds-of-data-can-i-input-into-nvivo-for-analysis"><i class="fa fa-check"></i><b>6.4</b> What kinds of data can I input into NVivo for analysis?</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="week6.html"><a href="week6.html#activity-find-some-data"><i class="fa fa-check"></i><b>6.4.1</b> Activity: Find some data…</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="week6.html"><a href="week6.html#creating-your-nvivo-project"><i class="fa fa-check"></i><b>6.5</b> Creating your NVivo project</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="week6.html"><a href="week6.html#activity-getting-started-with-nvivo"><i class="fa fa-check"></i><b>6.5.1</b> Activity: Getting Started with NVivo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="week6.html"><a href="week6.html#understanding-the-nvivo-interface"><i class="fa fa-check"></i><b>6.6</b> Understanding the NVivo interface</a></li>
+<li class="chapter" data-level="6.7" data-path="week6.html"><a href="week6.html#navigation-view"><i class="fa fa-check"></i><b>6.7</b> Navigation View</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="week6.html"><a href="week6.html#data"><i class="fa fa-check"></i><b>6.7.1</b> Data</a></li>
+<li class="chapter" data-level="6.7.2" data-path="week6.html"><a href="week6.html#the-files-section"><i class="fa fa-check"></i><b>6.7.2</b> The ‘Files’ section</a></li>
+<li class="chapter" data-level="6.7.3" data-path="week6.html"><a href="week6.html#activity-folders"><i class="fa fa-check"></i><b>6.7.3</b> Activity: Folders</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="week6.html"><a href="week6.html#importing-data"><i class="fa fa-check"></i><b>6.8</b> Importing Data</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="week6.html"><a href="week6.html#activity-import-data"><i class="fa fa-check"></i><b>6.8.1</b> Activity: Import data</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="week6.html"><a href="week6.html#memos"><i class="fa fa-check"></i><b>6.9</b> Memos</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="week6.html"><a href="week6.html#activity-memos"><i class="fa fa-check"></i><b>6.9.1</b> Activity: Memos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="week6.html"><a href="week6.html#word-frequency"><i class="fa fa-check"></i><b>6.10</b> Word Frequency</a>
+<ul>
+<li class="chapter" data-level="6.10.1" data-path="week6.html"><a href="week6.html#activity-8-word-frequency"><i class="fa fa-check"></i><b>6.10.1</b> Activity 8: Word frequency</a></li>
+<li class="chapter" data-level="6.10.2" data-path="week6.html"><a href="week6.html#activity-9-create-two-distinct-word-clouds"><i class="fa fa-check"></i><b>6.10.2</b> Activity 9: Create two distinct word clouds</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="week6.html"><a href="week6.html#summary-5"><i class="fa fa-check"></i><b>6.11</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="week7.html"><a href="week7.html"><i class="fa fa-check"></i><b>7</b> Week 7</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="week7.html"><a href="week7.html#learning-outcomes-6"><i class="fa fa-check"></i><b>7.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="7.2" data-path="week7.html"><a href="week7.html#deduction-induction-abduction-key-analytical-strategies-for-qualitative-data"><i class="fa fa-check"></i><b>7.2</b> Deduction, induction, abduction – key analytical strategies for qualitative data</a></li>
+<li class="chapter" data-level="7.3" data-path="week7.html"><a href="week7.html#coding-qualitative-data-using-nodes"><i class="fa fa-check"></i><b>7.3</b> ‘Coding’ qualitative data using ‘nodes’</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="week7.html"><a href="week7.html#what-are-nodes"><i class="fa fa-check"></i><b>7.3.1</b> What are ‘Nodes’?</a></li>
+<li class="chapter" data-level="7.3.2" data-path="week7.html"><a href="week7.html#activity-1-coding"><i class="fa fa-check"></i><b>7.3.2</b> Activity 1: Coding</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="week7.html"><a href="week7.html#using-mind-maps-to-organise-your-analytical-process-and-framework"><i class="fa fa-check"></i><b>7.4</b> Using ‘mind maps’ to organise your ‘analytical process and framework’</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="week7.html"><a href="week7.html#activity-2-deductive-coding"><i class="fa fa-check"></i><b>7.4.1</b> Activity 2: Deductive coding</a></li>
+<li class="chapter" data-level="7.4.2" data-path="week7.html"><a href="week7.html#activity-3-inductive-coding"><i class="fa fa-check"></i><b>7.4.2</b> Activity 3: Inductive coding</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="week7.html"><a href="week7.html#abductive-coding"><i class="fa fa-check"></i><b>7.5</b> Abductive coding</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="week7.html"><a href="week7.html#activity-4-retrieval-viewing-coded-data"><i class="fa fa-check"></i><b>7.5.1</b> Activity 4: Retrieval – viewing coded data</a></li>
+<li class="chapter" data-level="7.5.2" data-path="week7.html"><a href="week7.html#activity-5-viewing-more-context"><i class="fa fa-check"></i><b>7.5.2</b> Activity 5: Viewing more context</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="week7.html"><a href="week7.html#export-coded-data"><i class="fa fa-check"></i><b>7.6</b> Export coded data</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="week7.html"><a href="week7.html#activity-6-exporting-via-the-list-pane"><i class="fa fa-check"></i><b>7.6.1</b> Activity 6: Exporting via the list pane</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="week7.html"><a href="week7.html#some-other-useful-things-to-do"><i class="fa fa-check"></i><b>7.7</b> Some other useful things to do</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="week7.html"><a href="week7.html#create-another-word-cloud"><i class="fa fa-check"></i><b>7.7.1</b> Create another Word Cloud:</a></li>
+<li class="chapter" data-level="7.7.2" data-path="week7.html"><a href="week7.html#create-a-word-tree"><i class="fa fa-check"></i><b>7.7.2</b> Create a Word Tree:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="week7.html"><a href="week7.html#other-features"><i class="fa fa-check"></i><b>7.8</b> Other features…</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="week7.html"><a href="week7.html#graphicspictures---making-linked-notes-and-coding"><i class="fa fa-check"></i><b>7.8.1</b> Graphics/pictures - making linked notes and coding</a></li>
+<li class="chapter" data-level="7.8.2" data-path="week7.html"><a href="week7.html#coding-audiovideo-data"><i class="fa fa-check"></i><b>7.8.2</b> Coding audio/video data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="week7.html"><a href="week7.html#summary-6"><i class="fa fa-check"></i><b>7.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="week8.html"><a href="week8.html"><i class="fa fa-check"></i><b>8</b> Week 8</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="week8.html"><a href="week8.html#learning-outcomes-7"><i class="fa fa-check"></i><b>8.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="8.2" data-path="week8.html"><a href="week8.html#visualising-data"><i class="fa fa-check"></i><b>8.2</b> Visualising data</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="week8.html"><a href="week8.html#why-visualise-data"><i class="fa fa-check"></i><b>8.2.1</b> Why visualise data?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="week8.html"><a href="week8.html#anatomy-of-a-plot---the-grammar-of-graphics"><i class="fa fa-check"></i><b>8.3</b> Anatomy of a plot - the Grammar of Graphics</a></li>
+<li class="chapter" data-level="8.4" data-path="week8.html"><a href="week8.html#principles-of-good-data-visualisation"><i class="fa fa-check"></i><b>8.4</b> Principles of good data visualisation</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="week8.html"><a href="week8.html#the-data-to-ink-ratio---minimalist-viz"><i class="fa fa-check"></i><b>8.4.1</b> The data-to-ink ratio - minimalist viz</a></li>
+<li class="chapter" data-level="8.4.2" data-path="week8.html"><a href="week8.html#an-example"><i class="fa fa-check"></i><b>8.4.2</b> An example:</a></li>
+<li class="chapter" data-level="8.4.3" data-path="week8.html"><a href="week8.html#criticisms"><i class="fa fa-check"></i><b>8.4.3</b> Criticisms</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="week8.html"><a href="week8.html#what-makes-a-bad-graph-bad"><i class="fa fa-check"></i><b>8.5</b> What makes a bad graph bad?</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="week8.html"><a href="week8.html#activity-what-do-you-think"><i class="fa fa-check"></i><b>8.5.1</b> Activity: What do you think?</a></li>
+<li class="chapter" data-level="8.5.2" data-path="week8.html"><a href="week8.html#it-depends"><i class="fa fa-check"></i><b>8.5.2</b> It depends…</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="week8.html"><a href="week8.html#so-what-graph-should-we-use"><i class="fa fa-check"></i><b>8.6</b> So… what graph should we use?!?</a></li>
+<li class="chapter" data-level="8.7" data-path="week8.html"><a href="week8.html#edges-contrasts-and-colours"><i class="fa fa-check"></i><b>8.7</b> Edges, Contrasts and Colours</a></li>
+<li class="chapter" data-level="8.8" data-path="week8.html"><a href="week8.html#colour"><i class="fa fa-check"></i><b>8.8</b> Colour</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="week8.html"><a href="week8.html#activity-picking-a-colour-scheme"><i class="fa fa-check"></i><b>8.8.1</b> Activity: Picking a colour scheme</a></li>
+<li class="chapter" data-level="8.8.2" data-path="week8.html"><a href="week8.html#activity-custom-colours-in-excel-graphs"><i class="fa fa-check"></i><b>8.8.2</b> Activity: Custom colours in Excel graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="week8.html"><a href="week8.html#reading-between-the-lines-points"><i class="fa fa-check"></i><b>8.9</b> Reading between the lines (points)</a></li>
+<li class="chapter" data-level="8.10" data-path="week8.html"><a href="week8.html#exploratory-data-visualisation"><i class="fa fa-check"></i><b>8.10</b> Exploratory data visualisation</a>
+<ul>
+<li class="chapter" data-level="8.10.1" data-path="week8.html"><a href="week8.html#activity-comparing-categories"><i class="fa fa-check"></i><b>8.10.1</b> Activity: Comparing categories</a></li>
+<li class="chapter" data-level="8.10.2" data-path="week8.html"><a href="week8.html#activity-lets-never-make-a-pie-chart-again"><i class="fa fa-check"></i><b>8.10.2</b> Activity: Let’s never make a pie chart again</a></li>
+<li class="chapter" data-level="8.10.3" data-path="week8.html"><a href="week8.html#activity-exploring-trends"><i class="fa fa-check"></i><b>8.10.3</b> Activity: Exploring trends</a></li>
+<li class="chapter" data-level="8.10.4" data-path="week8.html"><a href="week8.html#activity-saving-your-graph"><i class="fa fa-check"></i><b>8.10.4</b> Activity: Saving your graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="week8.html"><a href="week8.html#activity-more-complex-graphs"><i class="fa fa-check"></i><b>8.11</b> Activity: More complex graphs</a></li>
+<li class="chapter" data-level="8.12" data-path="week8.html"><a href="week8.html#more-guidance-on-chart-design"><i class="fa fa-check"></i><b>8.12</b> More guidance on chart design</a></li>
+<li class="chapter" data-level="8.13" data-path="week8.html"><a href="week8.html#communicating-results"><i class="fa fa-check"></i><b>8.13</b> Communicating results</a>
+<ul>
+<li class="chapter" data-level="8.13.1" data-path="week8.html"><a href="week8.html#activity-interpreting-results"><i class="fa fa-check"></i><b>8.13.1</b> Activity: Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="8.14" data-path="week8.html"><a href="week8.html#summary-7"><i class="fa fa-check"></i><b>8.14</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="week9.html"><a href="week9.html"><i class="fa fa-check"></i><b>9</b> Week 9</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="week9.html"><a href="week9.html#learning-outcomes-8"><i class="fa fa-check"></i><b>9.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="9.2" data-path="week9.html"><a href="week9.html#crime-and-incident-trend-identification"><i class="fa fa-check"></i><b>9.2</b> Crime and incident trend identification</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="week9.html"><a href="week9.html#activity-formatting-your-dates-appropriately"><i class="fa fa-check"></i><b>9.2.1</b> Activity: Formatting your dates appropriately</a></li>
+<li class="chapter" data-level="9.2.2" data-path="week9.html"><a href="week9.html#activity-extracting-temporal-variables-from-dates"><i class="fa fa-check"></i><b>9.2.2</b> Activity: Extracting temporal variables from dates</a></li>
+<li class="chapter" data-level="9.2.3" data-path="week9.html"><a href="week9.html#activity-extract-the-day-of-the-week-from-the-date-column"><i class="fa fa-check"></i><b>9.2.3</b> Activity: Extract the day of the week from the date column</a></li>
+<li class="chapter" data-level="9.2.4" data-path="week9.html"><a href="week9.html#activity-recoding-days-of-the-week"><i class="fa fa-check"></i><b>9.2.4</b> Activity: Recoding days of the week</a></li>
+<li class="chapter" data-level="9.2.5" data-path="week9.html"><a href="week9.html#activity-patterns-in-residential-burglary"><i class="fa fa-check"></i><b>9.2.5</b> Activity: patterns in residential burglary</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="week9.html"><a href="week9.html#aggregating-to-simple-intervals"><i class="fa fa-check"></i><b>9.3</b> Aggregating to simple intervals</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="week9.html"><a href="week9.html#activity-aggregate-by-hour"><i class="fa fa-check"></i><b>9.3.1</b> Activity: Aggregate by hour</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="week9.html"><a href="week9.html#visualising-time"><i class="fa fa-check"></i><b>9.4</b> Visualising time</a></li>
+<li class="chapter" data-level="9.5" data-path="week9.html"><a href="week9.html#visualising-trends-line-graphs"><i class="fa fa-check"></i><b>9.5</b> Visualising trends: Line graphs</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="week9.html"><a href="week9.html#activity-visualising-trends-line-graphs"><i class="fa fa-check"></i><b>9.5.1</b> Activity: Visualising trends: Line graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="week9.html"><a href="week9.html#the-time-cycle-visualising-cyclical-variables"><i class="fa fa-check"></i><b>9.6</b> The time cycle: visualising cyclical variables</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="week9.html"><a href="week9.html#activity-visualising-cycles-radar-charts"><i class="fa fa-check"></i><b>9.6.1</b> Activity: Visualising cycles: Radar charts</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="week9.html"><a href="week9.html#bivariate-analysis"><i class="fa fa-check"></i><b>9.7</b> Bivariate analysis</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="week9.html"><a href="week9.html#activity-heatmaps"><i class="fa fa-check"></i><b>9.7.1</b> Activity: Heatmaps</a></li>
+<li class="chapter" data-level="9.7.2" data-path="week9.html"><a href="week9.html#more-charts"><i class="fa fa-check"></i><b>9.7.2</b> More charts?</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="week9.html"><a href="week9.html#time-series"><i class="fa fa-check"></i><b>9.8</b> Time series</a></li>
+<li class="chapter" data-level="9.9" data-path="week9.html"><a href="week9.html#moving-averages"><i class="fa fa-check"></i><b>9.9</b> Moving averages</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="week9.html"><a href="week9.html#activity-hand-calculate-the-moving-average"><i class="fa fa-check"></i><b>9.9.1</b> Activity: Hand calculate the moving average</a></li>
+<li class="chapter" data-level="9.9.2" data-path="week9.html"><a href="week9.html#activity-moving-average-in-excel"><i class="fa fa-check"></i><b>9.9.2</b> Activity: Moving average in Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="week9.html"><a href="week9.html#summary-8"><i class="fa fa-check"></i><b>9.10</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Making Sense of Crime Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week7" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Week 7<a href="week7.html#week7" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-outcomes-6" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Learning outcomes<a href="week7.html#learning-outcomes-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this session, you’ll learn the following:</p>
+<ul>
+<li>How to interrogate qualitative data using NVivo.</li>
+<li>How to build theory through <em>deductive</em>, <em>inductive</em> and <em>abductive</em> strategising.</li>
+<li>Some useful analysis features in NVivo, including how to work with non-textual data.</li>
+</ul>
+</div>
+<div id="deduction-induction-abduction-key-analytical-strategies-for-qualitative-data" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Deduction, induction, abduction – key analytical strategies for qualitative data<a href="week7.html#deduction-induction-abduction-key-analytical-strategies-for-qualitative-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To recap from the lecture video, this diagram gives some indication as to the directions of data analysis:</p>
+<p><img src="imgs/diagram_quali.png" /></p>
+<p>Hopefully you will now understand strategies for approaching research, including data collection and data analysis.</p>
+<p><strong>Induction</strong> is considered to be ‘bottom-up’ where we start with very broad general interests but build theory and concepts by first coding and interrogating the data. The key here is to ensure existing theoretical perspectives and concepts do not over-define our analysis and thus obscure the possibility of identifying and developing new concepts and theories.</p>
+<p><strong>Deduction</strong> is considered to be ‘top-down’ reasoning where we have predetermined ideas and theories and seek to test or evidence these. The coding categories we use are, therefore, explicit in directing the focus of our analysis.</p>
+<p><strong>Abduction</strong> integrates these two approaches, giving flexibility across the analytical process and ensuring interplay between our ideas and data.</p>
+<p>In this session, you’ll learn to interrogate your qualitative data using NVivo from all perspectives. You can read more about these strategies here.</p>
+</div>
+<div id="coding-qualitative-data-using-nodes" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> ‘Coding’ qualitative data using ‘nodes’<a href="week7.html#coding-qualitative-data-using-nodes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>‘A code in qualitative inquiry is most often a word or short phrase that symbolically assigns a summative, salient, essence-capturing, and/or evocative attribute for a portion of language-based or visual data.’</p>
+</blockquote>
+<ul>
+<li>Saldaña (2016) <a href="https://uk.sagepub.com/en-gb/eur/the-coding-manual-for-qualitative-researchers/book273583"><em>The Coding Manual</em></a> (p. 3)</li>
+</ul>
+<p>You can find copies of Saldaña’s <em>The Coding Manual</em> in the <a href="https://www.librarysearch.manchester.ac.uk/permalink/44MAN_INST/1r887gn/alma992975869959501631">University Library</a>.</p>
+<p><em>‘Coding’</em>, <em>‘coding schemes’</em> and <em>‘coded retrieval’</em> of our data are key tools of qualitative analysis. The terminology and philosophies that underpin coding processes are explained below (but also in the lecture videos), and we find that specific methodologies use particular routines when coding. For instance, one common approach is informed by the ‘Grounded Theory’, which involves both the induction and deduction approaches to coding data.</p>
+<p>Here, researchers would undertake a first layer of ‘coding’, often called <a href="https://en.wikipedia.org/wiki/Open_coding">‘open coding’</a>, to break down data into indicative themes and concepts. This precedes more granular coding, called <a href="https://en.wikipedia.org/wiki/Axial_coding">‘axial coding’</a>, where categories and concepts are refined further. We’ll draw on this approach in today’s session. The structures of coding schemes, alternate groupings and basic retrieval mechanisms are key to moving forward with analysis.</p>
+<p>In NVivo, we code our data using ‘nodes’. This is sometimes also termed the ‘indexing’ of our data.</p>
+<p><strong>Note 1</strong>: If you only take one thing away from today’s session, then it should be the importance of nodes. These are the fundamental building blocks of the theories and concepts we interpret in our data.</p>
+<p>So, let’s learn how to code using ‘nodes’.</p>
+<div id="what-are-nodes" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> What are ‘Nodes’?<a href="week7.html#what-are-nodes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Node is a term that refers to a point in the NVivo database, but a code label may be the name you give the node. Codes or nodes can be your ideas about the data – they can be generated inductively, deductively or abductively and may be refined, changed, grouped or deleted at any time. Applying nodes, etc., to passages of source data, at a minimum, provides the basic code and retrieves actions needed to accumulate together all the bits of data linked by common threads and themes.</p>
+<p><img src="imgs/coding.gif" /></p>
+<p>Nodes <strong>can be containers</strong> within which we locate our data related to particular themes or ideas of interest. We can use them in this way to organise our thinking. For instance, if we were looking at the Danske Bank data from last week, we might have created nodes such as: ‘methods’, ‘ethics’ or ‘perceptions’ of corporate money laundering. Within each of these ‘nodes’ we could copy key sections from our media articles, journal articles and policy documents into them to collect data about key themes. Nodes act as containers for or links to data exemplars based on conceptual ideas, themes, codes or more structurally for people, contexts, places, etc. The terms nodes, codes, keywords, and themes are used similarly, so <strong>please note that we often use the terms nodes and nodes interchangeably</strong>.</p>
+<p>Nodes <strong>can also be empty</strong> – for example, they can act like hierarchical top-level codes with nodes underneath them that do contain or have been applied to data. So, we might have created a top-level node entitled ‘money laundering’ and then sub-level nodes entitled ‘methods’, ‘ethics’ and ‘perceptions’. We might even create further layers of nodes within each sub-level, e.g. in the ‘perceptions’ node, we might break that down further to ‘perceptions of the public’, ‘perceptions of enforcement authorities’, ‘perception of politicians’, and so on. These sub-nodes can also be empty in the sense that we might be interested in something specific conceptually (like ‘perception of politicians’) but actually not find anything, even if we do have information for another perception label.</p>
+<p>These node layers, therefore, build a structural framework for our data. By organising our raw qualitative data (i.e., the news articles, the journal papers) according to these nodes, we can make sense of what would otherwise be an overwhelming amount of information. Plus, each node of any sort can be linked directly to one memo – so that relevant analytic notes are easily accessible from the node itself.</p>
+<p>Let’s do this then. Here, we’ll focus on using nodes for reflective purposes and thematic purposes.</p>
+</div>
+<div id="activity-1-coding" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Activity 1: Coding<a href="week7.html#activity-1-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We need to start by importing our data. Start by opening NVivo and creating a new project – call it something relevant for today’s session, e.g. Lab Session Week 7.</p>
+<p>You’ll find two datasets on Canvas in the Week 7 learning materials section: <strong>1. Dataset 1 Probation Interviews</strong> and <strong>2. Dataset 2 GMP Twitter data</strong>.</p>
+<p>You’ll need to download and save these to your One Drive or personal computer. Dataset 1 is a zip file, you’ll need to <a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc">unzip it</a> (this might be done automatically on Mac).</p>
+<p>Once you’ve done this, return to <em>NVivo</em> and import them using the knowledge you gained last week. For instance, first, create folders within your Files section to house the data (see below). Second, import your data. If you import all the interviews simultaneously, there is a small chance your computer will explode, catch fire, and burn the lab down. But let’s hope not. Be patient; importing so much data at once can take a few minutes.</p>
+<p><img src="imgs/mr-bean-waiting.gif" /></p>
+<p>If it does crash, you should import the transcripts in smaller numbers. Or, import a few of them to get a feel for the process rather than importing the full lot. You can see what we’ve done in the screenshot below for the probation interviews:</p>
+<p><img src="imgs/prob_interviews.png" /></p>
+<p>If you double-click on any of the transcripts in the <strong>List Pane</strong>, you can see the content in the <strong>Detail Pane</strong>.</p>
+<p>For Mac users, when you import the <em>GMP Twitter Data</em>, you can import it as a ‘Dataset’ rather than as ‘Documents’. You’ll first encounter the screen below:</p>
+<p><img src="imgs/dataset_asistant_nvivo15.png" /></p>
+<p>Simply click ‘Next’, then ‘Next’ again in the following window and then ‘Import’. You’ll then be able to see the Twitter data in the Detail View, as below:</p>
+<p><img src="imgs/gmp_data_nvivo15.png" /></p>
+<p>For Windows users to import data from an Excel file, go to Import, then Survey and then Excel.</p>
+<p><img src="imgs/excel_appsanywhere.png" /></p>
+<p>You will have to click through the Survey Import Wizard, which looks something like this:</p>
+<p><img src="imgs/import_wizard_appsanywhere.png" /></p>
+<p>There are five steps to click through where you check to ensure the data will be imported correctly. In this case, you can click ok through each step until step 5 without making any changes. <strong>In “Step 5”, unclick the autocoding themes and sentiments options</strong>. It may take a few minutes for NVivo to process the request.</p>
+<p><img src="imgs/import_appsanywhere_options.png" /></p>
+<p>This should be the more or less be the result when you finish with the import wizard:</p>
+<p><img src="imgs/import_wizard2.png" /></p>
+<p>Ok. So now we have both our datasets imported into NVivo. It’s probably worth saving your project in case something goes wrong.</p>
+<p>Usually, as these two datasets are very separate in terms of purpose, we would probably create two separate projects in NVivo to keep our separate research projects apart. For the purposes of getting to know the software, though, we can analyse both in one project today. You will, however, notice from the screenshots above that we have at least placed our datasets into two folders within the same project in an effort to keep things organised.</p>
+</div>
+</div>
+<div id="using-mind-maps-to-organise-your-analytical-process-and-framework" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Using ‘mind maps’ to organise your ‘analytical process and framework’<a href="week7.html#using-mind-maps-to-organise-your-analytical-process-and-framework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At this point, we need to give our coding some focus. To do this, we can use <strong>‘mind maps’</strong> so we know how to code our data. To demonstrate this, we will code the interview data in <em>Dataset 1</em> using a deductive approach and then code the Twitter data in <em>Dataset 2</em> using an inductive approach.</p>
+<p><img src="imgs/mindmapping.png" /></p>
+<div id="activity-2-deductive-coding" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> Activity 2: Deductive coding<a href="week7.html#activity-2-deductive-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, navigate to the ‘Maps’ tool. You can access maps via the Navigation Pane on the left if you want. Another (maybe easier) way is to navigate to the ‘Explore’ tab in your ribbon, and then selecting ‘Mind Map’. It’s possible that you need to search around for these - have a look and if you can’t find it, stick up your hand and we can help you.</p>
+<p><img src="imgs/access_mind_map.png" /></p>
+<p>You can then name it. Call it “Deductive Approach to Probation Interview Data”. You should end up with something like the following:</p>
+<p><img src="imgs/new_mind_map.png" /></p>
+<p>Now, <em>deductive logic</em> assumes that we have a predetermined set of codes, ideas and themes that we want to understand better. For instance, the interviews that were carried out with <strong>Chief Probation Officers (CPOs)</strong> in this research had the following clear research objectives:</p>
+<p><em>1. to investigate the social and educational backgrounds and career histories of CPOs;</em>
+<em>2. to explore their perceptions of community penalties, developments in these throughout their careers and potential changes in the future;</em>
+<em>3. to examine the role of CPOs as managers and their relationships with central government, local agencies and their probation committees.</em></p>
+<p>So, we can extrapolate key ideas from these objectives and use them to guide the data’s coding. We’ve divided the research objectives into key concepts and organised this in our mind map. Look at our screenshot below and see if you can replicate our work. You might pick a different structure or codes; that’s fine, too! Play around with creating <em>‘children’</em>, <em>‘siblings’</em> and <em>‘floating ideas’</em>. <strong>Children</strong> branch away from your central concept (below, CPO interviews in the blue circle), and <strong>siblings</strong> can be created as additional branches. You can just keep clicking to create new siblings, get the structure you want, and delete old ones whenever you’d like.</p>
+<p>Play around with colours and structure, too. Don’t be afraid to click around to try things out: this is a useful skill in itself and a powerful way of learning. Be confident to try things out and make mistakes!</p>
+<p>If you want, you can learn a bit more about creating and editing mind maps in <a href="https://www.youtube.com/watch?v=gyjM1IW4LQI">this YouTube video</a>. Note that although the video is for an older version of Nvivo (specifically, Nvivo12), the concepts and ideas are exactly the same.</p>
+<p><img src="imgs/mind_map_nvivo15.png" /></p>
+<p>What we’ve done here is create a predetermined framework for coding the interview data. When we read the transcripts, we can assign these themes to what was said in the interviews. One way in which this helps us, is that we read the transcripts with a purpose (i.e., looking for our themes) and then we can use NVivo to code bits of text according to these themes.</p>
+<p>Plus, to save us from having to create all the nodes individually, we can now use the <strong>‘Create as nodes/codes’</strong> option. This should only be used after you have finished writing all the themes from the picture above! Click it, then choose ‘Codes’ (in some versions this could be ‘Nodes’ but as we mentioned earlier, codes and nodes are often used interchangeably).</p>
+<p><img src="imgs/create_nodes_nvivo15.png" /></p>
+<p>Now click on ‘Codes’ in the Navigation Pane on the left, and you’ll see something like the following. Open up the folders so you can see all the nodes!</p>
+<p><img src="imgs/nodes_dropdown.png" /></p>
+<p>This is where the hard work begins. We now have to code our interview data according to these themes.</p>
+<p>There are multiple ways to code data according to nodes you have already created. You can also use some of these methods to select more than one code to apply to the selected passage of data.</p>
+<p>The easiest way to do this is as follows (though <em>NVivo</em> gives you many ways to code the data). First, go back to your Files, click on the Dataset 1 folder, and double-click on Interview 1 (int01). This will open the transcript in the <em>Detail Pane</em>. For ease, now click on ‘Codes’ so you can see all your created codes and have them in mind when you read the transcript. You also refer back to your mind map at any time to help get your thinking in order. Now start reading the transcript; each time you read something corresponding with your themes (i.e., codes, nodes), you need to ‘code’ it.</p>
+<p><img src="imgs/highlight.gif" /></p>
+<p>To do this, simply highlight the text and right-click (for Mac, Control + click), choose <em>‘code selection’</em> and then <em>‘to existing nodes or cases’</em>. Below, we’ve done this to highlight something about the CPOs degree choice, so we’ve coded this in relation to educational background (makes sense, right?).</p>
+<p><img src="imgs/coding_nvivo15.png" /></p>
+<p>For Windows users, this might look slightly different. You have to click on <em>“Code”</em>, then a new window pops up with the nodes, and you select from there. The right-click menu to code selected text looks like this (for a different example of text):</p>
+<p><img src="imgs/code_selection_pc.png" /></p>
+<p>You’ll notice the passage we’ve selected above relates to ‘career histories’, so we will code this sentence in the corresponding node. However, we also think it relates to ‘educational background’, so we are coding this sentence in two ‘nodes’!</p>
+<p>In Windows, to select multiple codes, you might have to hit “Ctrl” and then click the additional node you want. In Mac, you do this using a tick box.</p>
+<p><img src="imgs/two_nodes_pc.png" /></p>
+<p>Keep reading through the transcript and coding segments at single or multiple nodes as you see fit. You’re now coding your data deductively using a predetermined conceptual/thematic framework. Exciting!</p>
+<p>Keep coding until you feel like you fully understand how this works and until you’ve coded some data for each of the predetermined ‘nodes’.</p>
+<p><img src="imgs/coding_qual.jpg" /></p>
+<p>There is an option for “recent codes” that shows what nodes you have been using, and this can be slightly easier than opening the window back up, but it depends on how you wish to code the data. Perhaps also code text from other interviews.</p>
+<p><strong>You don’t have to read all the transcripts</strong>! We’re not that mean… Just read enough and play around with coding to understand the process and be comfortable with the software. Remember, if you encounter any issues when trying out coding, or do not understand anything, stick your hand up and we will come and help you (or if you’re doing this at home, come to our office hours!).</p>
+<p>But where has all our coding gone? The best way to visualise what we’ve done is to go to the ribbon tab at the top, choose ‘view’, then ‘coding stripes’, then ‘nodes recently coding’. On Mac, these options look like this, and on Windows it will be pretty similar (you might find it under ‘Document’ though).</p>
+<p><img src="imgs/code_stripes_nvivo15.png" />
+It will then look something like this.</p>
+<p><img src="imgs/viewing_codes.png" /></p>
+<p>You can also look at what you’ve coded according to each theme (generated from our mind map) by exploring the Codes option in the Navigation Pane. Here, we can see the number of things we’ve coded, and then view them by clicking on each coding theme.</p>
+<p><img src="imgs/code_summary.png" /></p>
+<p>To speed up the coding, you might want to ‘drag and drop’. This is a favourite for many researchers, as coding in this way allows you to drag a highlighted selection of data onto any code showing in the List pane. This, of course, necessitates the list pane showing codes (as opposed to memos or anything else from the navigation pane). Make sure you choose Codes from the left side. Once all your codes are available on the left side of the interview document, select the part of the text you want to code, hold down the left click of the mouse and drag it onto the desired node.</p>
+<!--**IMPORTANT:** One way to speed up drag and drop coding and see the most nodes possible on the screen at one time is to rearrange the windows so that the List containing the nodes is on the left side and the Detail pane of the source is on the right side. Do this by going to **View Ribbon tab /Detail View (Window) /Right**. Then, arrange vertical splitter bars to accommodate as much text on the right as possible while seeing enough of the code labels on the left. You’ll then be able to view it like this:-->
+<p><img src="imgs/drag_codes.png" /></p>
+<p>Theoretically, you would now read every transcript and code your data. After we’ve looked at inductive coding, we’ll look at what you can do with this coding.</p>
+</div>
+<div id="activity-3-inductive-coding" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> Activity 3: Inductive coding<a href="week7.html#activity-3-inductive-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It’s worth creating two code folders to better organise our data and keep our nodes for our two datasets separate. We wouldn’t necessarily need to do this if we were working on only one dataset. However, for now, right-click on the ‘Codes’ folder in the Codes section in the Navigation Pane. Create a folder called Dataset 1 (or something else meaningful, like ‘CPOs’), then another called Dataset 2. Now, click back on the codes folder, select all the codes you created, and drag them into the Dataset 1 folder. You might need to rearrange the hierarchy again slightly. Take care not to care to create two main folders, not folders within one another (i.e., don’t create dataset 2 within the dataset 1 folder, or vice-versa). We can then organise our codes according to each of the datasets.</p>
+<p><img src="imgs/code_folders.png" />
+Now, let’s start our Twitter data inductive coding. Let’s start by creating another mind map, but this time for the Twitter data.</p>
+<p><img src="imgs/tweet.gif" /></p>
+<p>We’re not looking to create predetermined codes like we do with the deductive approach. Instead, we want to remain open-minded about the themes in the data. So, let’s remind ourselves of this. See if you can produce something like the following:</p>
+<p><img src="imgs/gmp_mind_map.png" /></p>
+<p>Remember, we don’t want to approach the data with too many concrete, predetermined ideas about what we will find in the data. Instead, we want to have a few open, guiding questions that will allow us to code our data as we read it. This could literally just be things you might be interested in.</p>
+<p>So now to the hard work again. But this time, we’ll need to create our nodes <strong>inductively</strong> as we read through the tweets.</p>
+<p>Start by clicking on the <em>Dataset 2</em> folder (or whatever you’ve called it) in the Data section in the <em>Navigation Pane</em>, then double-clicking on the dataset in the <em>List Pane</em> to open it up in the Detail Pane. For the coding today, we’re only really interested in the tweets’ texts.</p>
+<p>Read through the tweets one by one, and each time you come across a theme of interest, code it by highlighting it, right-clicking, and choosing ‘code selection’ and then ‘to new code.’ We think the first tweet relates to ‘partnership working’, so this is what we’ve called the code. We can now go on to create more codes, and as before, some of the text might relate to more than one code. Note that once you create a new code, it might appear in your main Codes folder by default, so you should then click-and-drag it into your dataset 2 folder under ‘Codes’.</p>
+<p>As we go on, it’s likely that we will end up with a hierarchy of codes and sub-codes. Remember the tip above about arranging the panes so that you can click and drag text into your code themes.</p>
+<p>In theory, you’d read through all the tweets and code everything you consider important thematically in this case. You’d then read them all again, and again, and then again, and so on until you’re happy with the coding framework you’ve developed. You can do this in your own time. You could end up with hundreds of codes; you can merge codes, un-code text, delete codes, etc., until you’re satisfied.</p>
+<p><strong>Tip:</strong> The great thing about folders in NVivo is that you can change your mind, restructure them and move or drag nodes around between them whenever you like – really easily. I’ll let you explore all this in your own time. It’s all intuitive, and if you ever get stuck, we recommend watching the tutorials on the website. At the moment, these tutorials are often in an older version of NVivo (usually NVivo12) but the skills are usually easily transerable to the (newer) version that we are using.</p>
+</div>
+</div>
+<div id="abductive-coding" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Abductive coding<a href="week7.html#abductive-coding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Essentially, this involves going back and forth between the deductive approach and the inductive approaches that we’ve just covered. You might wish to create some pre-determined codes/nodes based on your interests and/or theory and then flexibly adapt these as you interrogate your data.</p>
+<div id="activity-4-retrieval-viewing-coded-data" class="section level3 hasAnchor" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Activity 4: Retrieval – viewing coded data<a href="week7.html#activity-4-retrieval-viewing-coded-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you need to look vertically through one file at a time, reviewing what you have done, open a document and ensure Select Coding stripes /All has been selected:</p>
+<p><img src="imgs/coding_stripes_all.png" /></p>
+<p>Once you have done some coding, you should review the passages you have selected for a particular code. We covered this a bit earlier, but do do so, double-click on the code you want in the List pane. This will open the code in the Detail pane. Each source that references the chosen code is listed and headed by a hyperlink back to the source.</p>
+</div>
+<div id="activity-5-viewing-more-context" class="section level3 hasAnchor" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Activity 5: Viewing more context<a href="week7.html#activity-5-viewing-more-context" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It may be useful to see the surrounding context of a coding reference you’re examining. This can be done in several ways:</p>
+<p>You can jump to the source by clicking on the blue link above the visual summary of your code. If you can’t see the blue link like the one below, right-click on the passage and select <strong>open referenced file</strong>. This will take you to the source and highlight the passage in which you were interested:</p>
+<p><img src="imgs/open_ref_file_nvivo15.png" /></p>
+<p>You can view additional content surrounding your passage of interest without going back to the whole source by right-clicking on the passage, clicking Coding Context and then and choosing how much you wish to see (e.g., narrow).</p>
+<p><img src="imgs/coding_context_nvivo15.png" /></p>
+<p>This will bring in your selected quantity in a way that you can differentiate it from what’s coded. At this point you can select more of it to code into that node, if you would like.</p>
+</div>
+</div>
+<div id="export-coded-data" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Export coded data<a href="week7.html#export-coded-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are extensive ways to output data material about your data to other formats and applications. Not all ways are included here since there are infinite combinations of settings required for different reasons, which will be based on your own particular requirements.</p>
+<div id="activity-6-exporting-via-the-list-pane" class="section level3 hasAnchor" number="7.6.1">
+<h3><span class="header-section-number">7.6.1</span> Activity 6: Exporting via the list pane<a href="week7.html#activity-6-exporting-via-the-list-pane" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is the general and usually used qualitative form of output, which can be achieved almost anywhere in the package using different methods. This is usually required for, e.g., coded output, and it is easier to generate than the more formal reporting functions below.</p>
+<p>In the List pane – select the item/s you want to export content for, say a Node or a Document; right-click &gt; Export. Give this a go now with a code (or codes) for dataset 1. First, click on Dataset 1 code in the Navigation pane. Then, Right-click on the Node you want a report on (I’ve chosen the ‘Career History’ Node) and choose Export. Find a suitable location to save the data and ensure you save it as a Word file. Note that on Windows you will get some options of what to export – you can choose the Reference View which includes <code>.doc</code> (i.e., a Word doc). This will be the easiest to view. Now, you should have a neat overview of your Node that you could use for quotes in your essays, dissertations, or journal articles.</p>
+<p><img src="imgs/export_nvivo15.png" /></p>
+<!--## Reports (NOTE: WINDOWS ONLY USERS! NOT SUPPORTED BY MAC, YET!)
+
+The formalized *Reports* and associated Extracts function (in the Navigation bar or Explore/Ribbon group) specifically concerns the support provided for mixed qual/quant methods. Some of the reports only provide quantitative information or summaries. You can just experiment with these through the Help Menu.
+
+Two standardized Reports will also provide e.g. qualitative coded source data.
+
+-   Coding Summary Report by *Node*
+-   Coding Summary Report by *Source*
+
+These reports are essentially the same but allow for different sorting mechanisms. This would be a quick way to export many codes at once. Experiment with all the drop-down options and Select buttons.
+
+See if you can create a Report on your Nodes and Sources.
+
+**MAC USERS** – play around to see what kind of things you can create. It’s all about trial and error at this stage.-->
+</div>
+</div>
+<div id="some-other-useful-things-to-do" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Some other useful things to do<a href="week7.html#some-other-useful-things-to-do" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Below are some more tools you might get some use out of.</p>
+<div id="create-another-word-cloud" class="section level3 hasAnchor" number="7.7.1">
+<h3><span class="header-section-number">7.7.1</span> Create another Word Cloud:<a href="week7.html#create-another-word-cloud" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>See if you can replicate something like this from last week. Hint: navigate to your dataset 1 folder, select everything, then find the Word Frequency option (usually under ‘Explore’).</p>
+<p><img src="imgs/cloud_w9.png" /></p>
+<p>This is a Word Cloud for Dataset 1 only.</p>
+</div>
+<div id="create-a-word-tree" class="section level3 hasAnchor" number="7.7.2">
+<h3><span class="header-section-number">7.7.2</span> Create a Word Tree:<a href="week7.html#create-a-word-tree" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the <em>text search</em> option under <em>Explore</em>, we’ve done a text search for the words <strong>Career</strong> in Dataset 1.</p>
+<p><img src="imgs/query_career_nvivo.png" /></p>
+<p>Then, choose the <em>‘Word Tree’</em> option (see above screenshot - grey button) to better understand the key discourse around the term. In Windows, the Word Cloud option might be in a tab on the right-hand side. Our query produced the following. Are there any relationships here? You can better understand the word tree by interacting with it via clicking around.</p>
+<p>Note that our word tree below is just an example – yours might look different (probably bigger!).</p>
+<p><img src="imgs/wordtree.png" /></p>
+<p>While you can export your Word Tree into jpeg or PDF form, in NVivo, you can also click on the different branches to better understand the connections interactively. Try it out.</p>
+<p>It’s worth knowing that you can search for multiple words at once using a specific syntax. A full example for multiple words would be something like <strong>‘Career’ AND ‘Probation’ AND ‘Money’ AND ‘Lifestyle’</strong>. You don’t need to know this in detail for now but you can read more about it <a href="https://help-nv.qsrinternational.com/12/win/v12.1.115-d3ea61/Content/queries/text-search-query.htm">online</a> if you want.</p>
+<!-- ### Create a Concept Map (WINDOWS ONLY!) -->
+<!-- Windows users might want to create a concept map to connect data to different ideas and thoughts. It is very similar to the Mind Map function that we did earlier. You can learn more about it [here](https://www.youtube.com/watch?v=NRSPP6eZd0s). -->
+</div>
+</div>
+<div id="other-features" class="section level2 hasAnchor" number="7.8">
+<h2><span class="header-section-number">7.8</span> Other features…<a href="week7.html#other-features" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Finally, here are some features that some of you may wish to make use of. Much of the <em>qualitative data</em> used in criminology is textual in that we often carry out interviews with offenders, victims and law enforcement.</p>
+<p><img src="imgs/police.gif" /></p>
+<p>But you might be interested in generating different data, such as audio or visual:</p>
+<div id="graphicspictures---making-linked-notes-and-coding" class="section level3 hasAnchor" number="7.8.1">
+<h3><span class="header-section-number">7.8.1</span> Graphics/pictures - making linked notes and coding<a href="week7.html#graphicspictures---making-linked-notes-and-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Try importing a picture. Find something online and save it. Then import it. Here’s our example:</p>
+<p><img src="imgs/code_joe_dart.png" /></p>
+<p>With the picture on view, click to edit or enable the editing feature. You can then:</p>
+<ul>
+<li>Make a selection within the graphic, right-click, insert a row, and write notes.</li>
+<li>Make a selection/right-click/Code selection.</li>
+<li>Code the notes instead</li>
+</ul>
+<p>Have a play with coding and analysing pictures.</p>
+</div>
+<div id="coding-audiovideo-data" class="section level3 hasAnchor" number="7.8.2">
+<h3><span class="header-section-number">7.8.2</span> Coding audio/video data<a href="week7.html#coding-audiovideo-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Coding multimedia data is very similar to coding textual data. For either audio or video sources, you can select transcript text and code as usual, or you can select a segment on the progress bar and code that is directly as if you’d highlighted text.</p>
+<p>So, if you have some music on your computer, try importing a song to see what it looks like, and then see if you can code lyrics and sections of the song.</p>
+<!-- ## More on capturing web material -->
+<!-- Last week, we imported web pages for our media articles and saved them as PDFs. But another, and actually better, way of doing this is by using **NCapture** (a web browser extension, search for it in your browser to install). -->
+<!-- A growing variety of web content and social media is available to you using NCapture, a web browser extension that is available for free with NVivo. It allows you to capture and import a screenshot of any webpage as a PDF or various social media sites (such as Twitter, Facebook, and LinkedIn) as a dataset (table). -->
+<!-- To learn more about this, click [here](https://www.youtube.com/watch?v=ciwMX4Xvu_s&ab_channel=DrPaulinePrevettandDrHaleemaSadiaMian). -->
+<!-- Once you have NCapture installed, open your browser and navigate to the website of interest. You’ll need to do this on your personal machines as it is unlikely to be installed on the lab computers. -->
+<!-- Once installed, the process is as follows: -->
+<!-- -  Click the *NCapture* icon in your browser bar -->
+<!-- -  A dialogue box opens (right) -->
+<!-- -  Choose your source type (probably ‘Web Page as PDF’), source name, optional description, memo nodes, etc. -->
+<!-- -  Click Capture -->
+<!-- -  See the NCapture Progress page below -->
+<!-- **NOTE:** WEB PAGES ARE CAPTURED USING THE PDF OPTION – SOCIAL MEDIA WOULD BE CAPTURED USING THE DATASET OPTION -->
+<!-- -  Go to the Sources section of the Navigation pane > Internals > Web Content subfolder (or wherever you’d like the new Sources to be created)  -->
+<!-- -  Go to the External Data Ribbon tab > From Other Sources > From NCapture (as seen left)  -->
+<!-- -  A dialogue box opens, as seen below, showing recent captures. Choose the captures you’d like, and click Import. Webpages will be brought in as PDFs; and social media files as tables, depending on your choices during capture. -->
+<!-- Then, analyse as we have been doing in the sessions. -->
+</div>
+</div>
+<div id="summary-6" class="section level2 hasAnchor" number="7.9">
+<h2><span class="header-section-number">7.9</span> Summary<a href="week7.html#summary-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can use your nodes to build your ideas and theories or identify evidence to support your theoretical propositions. You can focus on particular themes, compare across nodes and the data, and extract to support your academic work in a systematic way. Using <em>NVivo</em> gives you structure and management for your data, helps you develop clear organizing and conceptual frameworks, and allows you to interrogate the data at different levels and in different directions.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": {},
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
