@@ -17,7 +17,7 @@ description: "This is a companion workbook for the 1st year undergraduate module
 
 # Introduction {-}
 
-This study material is designed to introduce Criminology students at the University of Manchester to using data analysis in crime research and practice. These teaching materials were originally developed by Reka Solymosi and are currently being updated and maintained by Ana Nicoriciu and Sam Langton.
+This study material is designed to introduce Criminology students at the University of Manchester to using data analysis in crime research and practice. These teaching materials were originally developed by Reka Solymosi and are currently being updated and maintained by Nico Trajtenburg and Sam Langton.
 
 These lab notes are a work in progress. If you have any suggestions or find any errors, please don’t hesitate to contact us. We appreciate your feedback and will use it to improve the material for future students.
 
