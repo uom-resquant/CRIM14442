@@ -175,9 +175,6 @@ There is an option for “recent codes” that shows what nodes you have been us
 **You don’t have to read all the transcripts**! We're not that mean... Just read enough and play around with coding to understand the process and be comfortable with the software. Remember, if you encounter any issues when trying out coding, or do not understand anything, stick your hand up and we will come and help you (or if you're doing this at home, come to our office hours!).
 
 But where has all our coding gone? The best way to visualise what we’ve done is to go to the ribbon tab at the top, choose ‘view’, then ‘coding stripes’, then ‘nodes recently coding’. On Mac, these options look like this, and on Windows it will be pretty similar (you might find it under 'Document' though).
- 
-![](imgs/code_stripes_nvivo15.png)
-It will then look something like this.
 
 ![](imgs/viewing_codes.png)
 
@@ -212,7 +209,7 @@ So now to the hard work again. But this time, we’ll need to create our nodes *
 
 Start by clicking on the *Dataset 2* folder (or whatever you've called it)  in the Data section in the *Navigation Pane*, then double-clicking on the dataset in the *List Pane* to open it up in the Detail Pane. For the coding today, we’re only really interested in the tweets' texts.
 
-Read through the tweets one by one, and each time you come across a theme of interest, code it by highlighting it, right-clicking, and choosing ‘code selection’ and then ‘to new code. ' We think the first tweet relates to ‘partnership working’, so this is what we’ve called the code. We can now go on to create more codes, and as before, some of the text might relate to more than one code. Note that once you create a new code, it might appear in your main Codes folder by default, so you should then click-and-drag it into your dataset 2 folder under 'Codes'.
+Read through the tweets one by one, and each time you come across a theme of interest, code it by highlighting it, right-clicking, and choosing ‘code selection’ and then ‘to new code'. We think the first tweet relates to ‘partnership working’, so this is what we’ve called the code. We can now go on to create more codes, and as before, some of the text might relate to more than one code. Note that once you create a new code, it might appear in your main Codes folder by default, so you should then click-and-drag it into your dataset 2 folder under 'Codes'.
 
 As we go on, it's likely that we will end up with a hierarchy of codes and sub-codes. Remember the tip above about arranging the panes so that you can click and drag text into your code themes.
  
@@ -230,7 +227,7 @@ If you need to look vertically through one file at a time, reviewing what you ha
 
 ![](imgs/coding_stripes_all.png)
 
-Once you have done some coding, you should review the passages you have selected for a particular code. We covered this a bit earlier, but do do so, double-click on the code you want in the List pane. This will open the code in the Detail pane. Each source that references the chosen code is listed and headed by a hyperlink back to the source.
+Once you have done some coding, you should review the passages you have selected for a particular code. We covered this a bit earlier, but do so, double-click on the code you want in the List pane. This will open the code in the Detail pane. Each source that references the chosen code is listed and headed by a hyperlink back to the source.
 
 ### Activity 5: Viewing more context
 
