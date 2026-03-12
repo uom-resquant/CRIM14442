@@ -1000,26 +1000,27 @@ Now, just as we did with the line charts, just right-click anywhere on the chart
 ![](imgs/stackedbar_3.png)
 
 
-And again, this will bring up a pop-up. Here, once again, you can add variables with the "Add" (or **+**) button: 
+And again, this will bring up a pop-up. Here, once again, you can add variables with the "Add" (or **+**) button. Below is the example for Windows.
 
 
 ![](imgs/stackedbar_4.png)
+And below is the equivalent example for Mac:
 
-Once you click on the "Add" button, the fields should appear empty, as before. Click in the text box next to "Name"(or "Series name"), and then click on the column header (variable name) for the next variable. Select the "Robbery Rate" column header. Then click in the text box next to "Y values" (or "Series values"),  and then select the values for robbery rate:
+![](imgs/selectdatamac.png)
 
+Once you click on the "Add" button, the fields should appear empty, as before. Click in the text box next to "Name"(or "Series name"), and then click on the column header (variable name) for the next variable. Select the "Robbery Rate" column header. Then click in the text box next to "Y values" (or "Series values"),  and then select the values for robbery rate, just as you did before for a different column.
+
+Then, you might get something like this?
 
 
 ![](imgs/stackedbar_5.png)
+Are your bas next to one another, rather than stacked on top for one another? That's all good, it just means you selected such a bar chart. If you want to switch your type of chart after you've made it, you can do that just by right-clicking on it, selecting 'Change chart type' and then choosing a new one. In this case, you might just need to select the bar chart symbol that shows bars stacked.
 
-
-
-Then, repeat this for every variable you want to add. 
+Once you're happy with that, repeat these for every variable you want to add to your bar chart.
 
 Then, finally, you should end up with a stacked bar chart of all these variables that allows you to compare the rate of each crime type between years, but also allows you to see how that total crime rate is broken down across different crime types (e.g., Violent crimes, Robbery, Assault, and Burglary).
 
 ![](imgs/stackedbar_final.png)
-
-
 
 You can see that you can use data visualisation as a way of putting together many variables into one graph. Now, don't forget to make sure you're conscious about your colour choices! These are the default colours. Do we like them? Making no choice (i.e., sticking with the default) is still making a choice! I'll leave this up to you to see how you'd like to proceed...
 
