@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2026-04-17" />
+<meta name="date" content="2026-04-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -639,8 +639,8 @@ details {
 <p><img src="imgs/time_line_ex.png" /></p>
 <p>The above is some made-up data of something over the hours of a day. What do the peaks there look like to you? If we were looking at this, we would say we have three peaks. There is a peak in the early hours of the morning, like 1-2 am, then again a peak midday, and again another peak in the evening around 9 pm.</p>
 <p><img src="imgs/time_radar_ex.png" /></p>
-<p>This is the same data but visualised in a cyclical way. In this visualisation, it actually appears that there are two main peaks. The peaks that were previously identified as two separate, possibly independent peaks have now bridged into 1, and we can see that instead, there might be a continuum and an ongoing event from 9 pm to 2 am. It is important to consider the cyclical nature of some of your temporal variables and use the appropriate means to visualise them.</p>
-<p>It might be worth having a look at some examples of temporal data being visualised, as well as making our own visualisations of time. Here, we will focus on three approaches: <strong>line graphs</strong>, <strong>radar graphs</strong>, and <strong>heatmaps</strong>.</p>
+<p>This is the same data but visualised in a cyclical way. In this visualisation, it actually appears that there are two main peaks. The peaks that were previously identified as two separate, possibly independent peaks have now bridged into 1, and we can see that instead, there might be a continuum and an ongoing event from 9 pm to 2 am. It is sometimes important to consider the cyclical nature of some of your temporal variables and use the appropriate means to visualise them.</p>
+<p>It might be worth having a look at some examples of temporal data being visualised, as well as making our own visualisations of time. Here, we will focus on two approaches: <strong>line graphs</strong> and <strong>heatmaps</strong>. If you want, you can also read about <strong>radar graphs</strong>.</p>
 </div>
 <div id="visualising-trends-line-graphs" class="section level2 hasAnchor" number="9.5">
 <h2><span class="header-section-number">9.5</span> Visualising trends: Line graphs<a href="week9.html#visualising-trends-line-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -672,6 +672,10 @@ details {
 </div>
 <div id="the-time-cycle-visualising-cyclical-variables" class="section level2 hasAnchor" number="9.6">
 <h2><span class="header-section-number">9.6</span> The time cycle: visualising cyclical variables<a href="week9.html#the-time-cycle-visualising-cyclical-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<details>
+<summary>
+<i><b>READ MORE: visualising cyclical variables </b></i>
+</summary>
 <p>I’ve hinted at this throughout the course that there are special kinds of ordinal categorical variables which are cyclical, meaning that they have a pattern which repeats. Remember back in lab 1, when you were coding the <strong>levels of measurement</strong> for the variables in the Twitter data we assembled? And we told you that the time of a Tweet, for example, was not a numeric variable; instead, it was ordinal. Well, the hour of the day is a cyclical ordinal variable, as it <em>cycles</em> around. After 23h comes 0h, and not 24, as we would expect from a numeric variable.</p>
 <p>How can we best represent this special nature of our variables?</p>
 <p>There are also multiple cyclical ways to visualise your data. One approach is to use radar graphs. The graphs below show the same page-view data for a website across different times of day. Here’s an example by Purna Duggirala that is essentially a bubble chart that uses two clocks side by side:</p>
@@ -680,10 +684,6 @@ details {
 <p>In a great show of Internet collaboration, the double clock chart spurred some other experimentation. Jorge Camos came up with a polar chart that plots the data on a single “clock face,” showing two 12-hour charts overlaid on top of each other.</p>
 <p><img src="http://dougmccune.com/blog/wp-content/uploads/2011/04/polar_chart2-300x256.png" /></p>
 <p>Given that the 12-hour clock is a difficult metaphor to use for a visualisation, many people choose to use a 24-hour clock. 24-hour circular charts typically start at midnight at the top and proceed clockwise, showing all 24 hours in a single 360-degree range. The benefit of a 24-hour circular chart is that the cyclical nature of the data is represented, and the viewer can easily read the continuity at any point on the chart.</p>
-<details>
-<summary>
-<i><b>READ MORE: visualising cyclical variables </b></i>
-</summary>
 <p>A simple example of a 24-hour circle comes from Stamen Design‘s Crimespotting. This isn’t a data-heavy visualisation chart since it doesn’t actually show any data other than sunrise and sunset times (instead, its main purpose is as a filtering control). But it’s a good example of the general layout of 24-hour charts, and it’s very clean and well-labelled. You can read about the thinking that went into designing this “time of pie” on Stamen’s blog.</p>
 <p><img src="imgs/crimespotting_time_pie.png" /></p>
 <p>The inspiration for this time selector, documented in Tom Carden’s blog post, was the real-life timer control used to automate lights in your house.</p>
@@ -693,7 +693,6 @@ details {
 <p><img src="imgs/FlorenceData900.jpg" /></p>
 <p>We all have an image of Nightingale - who died over 100 years ago - as a nurse, lady with the lamp, medical reformer and campaigner for soldiers’ health. But she was also a data journalist. After the disasters of the Crimean War, Florence Nightingale returned to become a passionate campaigner for improvements in the health of the British army. She developed the visual presentation of information, including the pie chart, first developed by William Playfair in 1801. Nightingale also used statistical graphics in reports to Parliament, realising this was the most effective way of bringing data to life.</p>
 <p>Her report on the mortality of the British Army, published in 1858, was packed with diagrams and tables of data. The Coxcomb chart demonstrates the ratio of British soldiers who died during the Crimean War from sickness rather than from wounds or other causes. Her work changed the course of history, enabling proactive change through data collection. In 1858, Nightingale presented her visualisations to the health department, demonstrating the conditions of the hospitals and whose actions resulted in deaths being cut by two-thirds.</p>
-</details>
 <div id="activity-visualising-cycles-radar-charts" class="section level3 hasAnchor" number="9.6.1">
 <h3><span class="header-section-number">9.6.1</span> Activity: Visualising cycles: Radar charts<a href="week9.html#activity-visualising-cycles-radar-charts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>So, how do we make these in Excel? Well, let’s return to our within-day variation in residential burglaries. Let’s visualise when they take place.</p>
@@ -737,6 +736,7 @@ details {
 <p>And finally, ta-daa, you have a radial graph that helps you compare the within-day temporal patterns of residential burglary between weekdays and weekends.</p>
 <p><img src="imgs/hr_r_28.png" /></p>
 <p>Now we can talk about what is the temporal distribution of burglary within the day and how this pattern is different between weekdays and weekends. Think about how these might map onto people’s routine activities. What time do you think most people leave to go to work in the morning? Could that explain the spike in weekday early hours, which we don’t see in the weekend chart? Hmm hmm!</p>
+</details>
 </div>
 </div>
 <div id="bivariate-analysis" class="section level2 hasAnchor" number="9.7">
@@ -764,15 +764,15 @@ details {
 <p><img src="imgs/cond_3.png" /></p>
 <p>Now your eyes are immediately drawn to the high values, which apparently are Monday to Friday, 7 and 8 AM. We can see that on Saturdays and Sundays, even burglars want a lie-in, so the low green burglary rate creeps up later than on weekdays. Exciting stuff!</p>
 <p>Do remember, though, what we learned about colour coding, and make sure you consider your colourblind audiences when presenting such data!</p>
+</div>
+<div id="more-charts" class="section level3 hasAnchor" number="9.7.2">
+<h3><span class="header-section-number">9.7.2</span> More charts?<a href="week9.html#more-charts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details>
 <summary>
 <i><b>READ MORE: extra types of charts </b></i>
 </summary>
-</div>
-<div id="more-charts" class="section level3 hasAnchor" number="9.7.2">
-<h3><span class="header-section-number">9.7.2</span> More charts?<a href="week9.html#more-charts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Gantt chart is also a way to visualise the passage of time and the tasks you must complete over time.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/GanttChartAnatomy.svg/300px-GanttChartAnatomy.svg.png" /></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/GanttChartAnatomy.svg/1920px-GanttChartAnatomy.svg.png" /></p>
 <p>It is named after the American engineer and management consultant Henry Gantt, who extensively used this framework for project management. We covered how to do these in the research design session (week 5); please refer back to that session if you are not sure how to make them any clearer…!</p>
 <p>There are also some non-conventional line-graph-based timelines. While these initially appear linear, they can actually loop back and reverse in time, making them slightly different. For example, <a href="http://www.nytimes.com/imagepages/2010/05/02/business/02metrics.html">this one about gas prices and driving practices</a>, or this one about <a href="http://www.nytimes.com/interactive/2012/09/17/science/driving-safety-in-fits-and-starts.html">driving safely</a> demonstrate this approach quite neatly.</p>
 <p>You could also have a stacked line chart to represent time:</p>

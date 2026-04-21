@@ -353,11 +353,11 @@ The above is some made-up data of something over the hours of a day. What do the
 
 
 
-This is the same data but visualised in a cyclical way. In this visualisation, it actually appears that there are two main peaks. The peaks that were previously identified as two separate, possibly independent peaks have now bridged into 1, and we can see that instead, there might be a continuum and an ongoing event from 9 pm to 2 am. It is important to consider the cyclical nature of some of your temporal variables and use the appropriate means to visualise them. 
+This is the same data but visualised in a cyclical way. In this visualisation, it actually appears that there are two main peaks. The peaks that were previously identified as two separate, possibly independent peaks have now bridged into 1, and we can see that instead, there might be a continuum and an ongoing event from 9 pm to 2 am. It is sometimes important to consider the cyclical nature of some of your temporal variables and use the appropriate means to visualise them. 
 
 
 
-It might be worth having a look at some examples of temporal data being visualised, as well as making our own visualisations of time. Here, we will focus on three approaches: **line graphs**, **radar graphs**, and **heatmaps**. 
+It might be worth having a look at some examples of temporal data being visualised, as well as making our own visualisations of time. Here, we will focus on two approaches: **line graphs** and **heatmaps**. If you want, you can also read about **radar graphs**.
 
 
 ## Visualising trends: Line graphs
@@ -434,8 +434,11 @@ An interesting book to read that talks a lot about how to identify signals withi
 In this case, we would need to look past day-to-day variations to examine overall trends. For example, we could start to **smooth** this data and, instead of looking at the number of burglaries each day, consider the *average number of burglaries every 10 days*, which is called the **10-point moving average**. This would be one approach to smoothing our data. We will return to this later today. 
 
 
+
 ## The time cycle: visualising cyclical variables
 
+ <details>
+<summary><i><b>READ MORE: visualising cyclical variables </b></i></summary>
 
 I've hinted at this throughout the course that there are special kinds of ordinal categorical variables which are cyclical, meaning that they have a pattern which repeats. Remember back in lab 1, when you were coding the **levels of measurement** for the variables in the Twitter data we assembled? And we told you that the time of a Tweet, for example, was not a numeric variable; instead, it was ordinal. Well, the hour of the day is a cyclical ordinal variable, as it *cycles* around. After 23h comes 0h, and not 24, as we would expect from a numeric variable. 
 
@@ -462,9 +465,6 @@ In a great show of Internet collaboration, the double clock chart spurred some o
 
 Given that the 12-hour clock is a difficult metaphor to use for a visualisation, many people choose to use a 24-hour clock. 24-hour circular charts typically start at midnight at the top and proceed clockwise, showing all 24 hours in a single 360-degree range. The benefit of a 24-hour circular chart is that the cyclical nature of the data is represented, and the viewer can easily read the continuity at any point on the chart.
 
-
- <details>
-<summary><i><b>READ MORE: visualising cyclical variables </b></i></summary>
 
 
 
@@ -497,7 +497,6 @@ We all have an image of Nightingale - who died over 100 years ago - as a nurse, 
 
 Her report on the mortality of the British Army, published in 1858, was packed with diagrams and tables of data. The Coxcomb chart demonstrates the ratio of British soldiers who died during the Crimean War from sickness rather than from wounds or other causes. Her work changed the course of history, enabling proactive change through data collection. In 1858, Nightingale presented her visualisations to the health department, demonstrating the conditions of the hospitals and whose actions resulted in deaths being cut by two-thirds.
 
-</details>
 ### Activity: Visualising cycles: Radar charts
 
 
@@ -642,6 +641,7 @@ And finally, ta-daa, you have a radial graph that helps you compare the within-d
 
 Now we can talk about what is the temporal distribution of burglary within the day and how this pattern is different between weekdays and weekends. Think about how these might map onto people's routine activities. What time do you think most people leave to go to work in the morning? Could that explain the spike in weekday early hours, which we don't see in the weekend chart? Hmm hmm!
 
+</details>
 
 ## Bivariate analysis 
 
@@ -703,16 +703,14 @@ Now your eyes are immediately drawn to the high values, which apparently are Mon
 
 Do remember, though, what we learned about colour coding, and make sure you consider your colourblind audiences when presenting such data!
 
+### More charts?
 
  <details>
 <summary><i><b>READ MORE: extra types of charts </b></i></summary>
-### More charts?
 
 The Gantt chart is also a way to visualise the passage of time and the tasks you must complete over time. 
 
-
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/GanttChartAnatomy.svg/300px-GanttChartAnatomy.svg.png)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/GanttChartAnatomy.svg/1920px-GanttChartAnatomy.svg.png)
 
 
 It is named after the American engineer and management consultant Henry Gantt, who extensively used this framework for project management. We covered how to do these in the research design session (week 5); please refer back to that session if you are not sure how to make them any clearer...!
