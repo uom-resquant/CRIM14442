@@ -685,7 +685,7 @@ To implement this, highlight the values in your table:
 ![](imgs/cond_1.png)
 
 
-Then, find the conditional formatting tab and select a colour scheme that works for you. Remember to consider whether red values should be high or low. Is a high number good? Or is it bad? 
+Then, find the conditional formatting tab (usually under 'Home') and select a colour scheme that works for you. Remember to consider whether red values should be high or low. Is a high number good? Or is it bad? 
 
 
 ![](imgs/cond_2.png)
