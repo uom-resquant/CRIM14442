@@ -216,3 +216,5 @@ moving-averages
 activity-hand-calculate-the-moving-average
 activity-moving-average-in-excel
 summary-8
+visualising-the-differences-between-groups
+activity-making-a-chart-template
